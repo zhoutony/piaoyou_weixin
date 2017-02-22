@@ -1,0 +1,101 @@
+<view class="member-head">
+  <view class="top animate-left">
+    <image class="top" src="/img/my_top.jpg"></image>
+  </view>
+  <view class=" animate-right">
+    <image class="bottom" src="/img/my_bottom.jpg"></image>
+  </view>
+  <view class="poster-mask"></view>
+  <view class="member-avatar">
+    <image class="member-avatar-image" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+  </view>
+  <view class="member-name">{{userInfo.nickName}}</view>
+</view>
+<view class="tab-box">
+  <view class="ul">
+    <block wx:if="{{viewParam.mineTag == 1}}">
+      <view class="li active">
+        <view class="iconfont icon-order"></view>
+        <text>电影票</text>
+      </view>
+      <navigator url="../suit/suit" class="li">
+        <view class="iconfont icon-order"></view>
+        <text>卖品</text>
+      </navigator>
+      <navigator url="../voucher/voucher" class="li">
+        <view wx:if="{{viewParam.isEcoupon}}">
+          <view class="iconfont icon-coupons"></view>
+          <text>代金券</text>
+        </view>
+      </navigator>
+      <navigator url="../cards/cards" class="li">
+        <view wx:if="{{viewParam.membercardType > 0 || viewParam.virtualcardType > 0}}">
+          <view class="iconfont icon-cards"></view>
+          <text>会员卡</text>
+        </view>
+      </navigator>
+    </block>
+    <block wx:elif="{{viewParam.mineTag == 2}}">
+      <navigator open-type="switchTab" url="../orders/orders" class="li">
+        <view class="iconfont icon-order"></view>
+        <text>电影票</text>
+      </navigator>
+      <navigator open-type="redirect" url="../suit/suit" class="li active">
+        <view class="iconfont icon-sales"></view>
+        <text>卖品</text>
+      </navigator>
+      <view class="li active">
+        <view class="iconfont icon-coupons"></view>
+        <text>代金券</text>
+      </view>
+      <navigator open-type="redirect" class="li _stop_" url="../cards/cards" class="li">
+        <view wx:if="{{viewParam.membercardType > 0 || viewParam.virtualcardType > 0}}">
+          <view class="iconfont icon-cards"></view>
+          <text>会员卡</text>
+        </view>
+      </navigator>
+    </block>
+    <block wx:elif="{{viewParam.mineTag == 3}}">
+      <navigator open-type="switchTab" url="../orders/orders" class="li">
+        <view class="iconfont icon-order"></view>
+        <text>电影票</text>
+      </navigator>
+      <navigator open-type="redirect" url="../suit/suit" class="li">
+        <view class="iconfont icon-sales"></view>
+        <text>卖品</text>
+      </navigator>
+      <navigator open-type="redirect" url="../voucher/voucher" class="li">
+        <view wx:if="{{viewParam.isEcoupon}}">
+          <view class="iconfont icon-coupons"></view>
+          <text>代金券</text>
+        </view>
+      </navigator>
+      <view class="li active">
+        <view class="iconfont icon-cards"></view>
+        <text>会员卡</text>
+      </view>
+    </block>
+    <block wx:else="{{viewParam.mineTag == 4}}">
+      <navigator open-type="switchTab" url="../orders/orders" class="li">
+        <view class="iconfont icon-order"></view>
+        <text>电影票</text>
+      </navigator>
+      <view class="li active">
+        <view class="iconfont icon-sales"></view>
+        <text>卖品</text>
+      </view>
+      <navigator open-type="redirect" url="../voucher/voucher" class="li">
+        <view wx:if="{{viewParam.isEcoupon}}">
+          <view class="iconfont icon-coupons"></view>
+          <text>代金券</text>
+        </view>
+      </navigator>
+      <navigator open-type="redirect" url="../cards/cards" class="li">
+        <view wx:if="{{viewParam.membercardType > 0 || viewParam.virtualcardType > 0}}">
+          <view class="iconfont icon-cards"></view>
+          <text>会员卡</text>
+        </view>
+      </navigator>
+    </block>
+  </view>
+</view>

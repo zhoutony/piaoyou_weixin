@@ -1,0 +1,60 @@
+<view class="m-detail">
+    <view class="movie-poster">
+        <image src="http://static.wepiao.com/movie/2016/9/7_0/201609070957237950.jpg" class="blurs"></image>
+    </view>
+    <view class="poster-wrapper">
+        <image src="{{movie_poster}}" class="poster-img"></image>
+    </view>
+    <view class="mod m-con">
+        <view class="hd clearfix">
+            <view class="m-title">{{name}}</view>
+            <view class="movie-type">
+                <view class="single">3D</view>
+            </view>
+        </view>
+        <view class="m-des">
+            <view class="reviews">"{{remark}}"</view>
+            <view class="show-star-mod clearfix">
+                <view class="show-star-ranking">
+                    <view style="width:75%;" class="show-star-ranking-light"></view>
+                </view>
+                <view class="show-star-remark">
+                    <text>{{init_score}}</text>
+                    分
+                </view>
+                    <view class="m-type">{{tags}}</view>
+                    <view>{{formatDate}}上映，{{longs}}</view>
+            </view>
+        </view>
+        <view class="m-intro-box">
+            <view class="mod m-intro">
+                <view class="info">
+                    <view class="full">
+                        <view class="m-intro-des line-limit">
+                        {{detail}}
+                        </view>
+                    </view>
+                </view>
+            </view>
+            <view class="more-moive-info">
+                <view class="arrow-ent bottom"></view>
+            </view>
+        </view>
+     </view>
+<!--      <view class="film-maker-wrapper">
+          <view>主创</view>
+          <view class="film-maker-list">
+              <block wx:for-items="{{actors_detail}}" wx:key="{{index}}">
+                <view class="director">
+                     <view class="film-maker-img">
+                            <image src="{{item.head_image}}" alt="加里斯·爱德华斯"></image>
+                     </view>
+                     <view class="film-maker-name">
+                        <view>{{item.actor_name_chs}}</view>
+                     </view>
+                     <view class="film-maker-oart">{{item.movie_actor_name}}</view>
+                </view>
+              </block>
+           </view>
+      </view> -->
+</view>

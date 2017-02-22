@@ -1,0 +1,1005 @@
+<template name="seats">
+  <view wx:for="{{item.detail}}" wx:key="{{index}}">
+    <view wx:if="{{item.isSeat}}"
+          data-id="{{item.id}}"
+          id="{{item.id}}"
+          data-row="{{item.desc}}"
+          data-col="{{item.n}}"
+          class="seats_size">
+        <image
+          class="{{item.seat_class}}"
+          data-id="{{item.id}}"
+          data-row="{{item.desc}}"
+          data-col="{{item.n}}"
+          src="{{item.img}}"/>
+    </view>
+    <view wx:else="{{item.isSeat}}">
+      <view class="no-seat" />
+    </view>
+  </view>
+</template>
+<view class="notice dis-notice m-hide"></view>
+<view class="select-movie-info">
+  <view class="h3"> 从你的全世界路过</view>
+  <view class="des clearfix">
+    <view id="displayDate" class="date">
+      今天  9-29 15:00 国语2D
+    </view>
+    <a class="link">
+      <icon class="iconfont icon-change"></icon>换个场次
+    </a>
+  </view>
+</view>
+<scroll-view
+  id="roomPage"
+  class="seat-select {{scrollClassName}}"
+  catchtouchstart="catchTouchStart"
+  catchtouchmove="catchTouchMove"
+  catchtouchend="catchTouchEnd"
+  scroll-x="true"
+  scroll-y="true"
+  style="width: 100%; height: 100%;"
+  >
+  <view class="screen"><text>5号厅 银幕</text></view>
+  <view class="seat-container" catchtap="chooseSeat">
+    <view style="height: 480px; overflow: hidden; visibility: visible;" class="room">
+      <view class="table" style="">
+        <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat sold" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num">
+              </view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat sold" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat selected" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num">
+                <view>2排</view>
+                <view>6座</view>
+              </view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat selected" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num">
+                <view>2排</view>
+                <view>6座</view>
+              </view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+                <view class="row" data-row="">
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          <view row="2" col="6" title="2排6座" loveind="0" id="seat-2-6" class="seat optional" available="false" data-position="6-3">
+            <view class="wrap">
+              <view class="char"></view>
+              <view class="num m-hide">2排6座</view>
+            </view>
+          </view>
+          
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+          <view class="seat empty"></view>
+        </view>
+
+      </view>
+    
+    
+    </view>
+    <view class="seat-nav" style="visibility: visible;">
+      <view class="lines" style="transition-duration: 0ms; transform: translate(0px, -128px) translateZ(0px) scale(1); transform-origin: left top 0px;">
+        <view class="desc first">2</view>
+        <view class="desc hidden">&nbsp;</view>
+        <view class="desc">2</view>
+        <view class="desc">3</view>
+        <view class="desc space">&nbsp;</view>
+        <view class="desc">4</view>
+        <view class="desc">5</view>
+        <view class="desc">6</view>
+        <view class="desc">4</view>
+        <view class="desc">5</view>
+        <view class="desc">6</view>
+        <view class="desc">4</view>
+        <view class="desc">5</view>
+        <view class="desc">6</view>
+        <view class="desc">4</view>
+        <view class="desc">5</view>
+        <view class="desc">6</view>
+        <view class="desc last">6</view>
+      </view>
+    </view>
+  </view>
+</scroll-view>
+
+<view class="seat-fixed-bottom default">
+  <view class="smart-select-box">
+  <view class="seat-img">
+    <view class="seat optional">
+      <view class="wrap"><view class="char"></view></view>
+    </view>
+    <view class="text">可选</view>
+    <view class="seat selected">
+    <view class="wrap"><view class="char"></view></view></view>
+    <view class="text">已选</view>
+    <view class="seat sold">
+    <view class="wrap"><view class="char"></view></view></view>
+    <view class="text">已售</view>
+  </view>
+  <div class="smart-select-seat">帮我选座</div>
+  </view>
+</view>
+
+
+<view id="submit" style="z-index: 5; transition: all 0.5s; bottom: 0px;" class="seat-fixed-bottom">
+  <view class="no-presale">
+    <view class="clearfix">
+      <view class="set-phone">
+        <icon class="iconmoon icon-fillin"></icon>
+        <text>请填写你的购票手机号</text>
+      </view>
+
+      <view class="edit-phone m-hide">
+        <view class="my-phone"></view>
+        <icon class="iconmoon icon-edit"></icon>
+      </view>
+
+      <view class="table-box">
+        <view class="selected-seat-list cell clearfix">
+          <view id="01-10-3" class="li">
+            <view class="seat-num">10排3座</view>
+            <view class="btn-close-seat"></view>
+          </view>
+          <view id="01-10-3" class="li">
+            <view class="seat-num">10排3座</view>
+            <view class="btn-close-seat"></view>
+          </view>
+          <view id="01-10-3" class="li">
+            <view class="seat-num">10排3座</view>
+            <view class="btn-close-seat"></view>
+          </view>
+          <view id="01-10-3" class="li">
+            <view class="seat-num">10排3座</view>
+            <view class="btn-close-seat"></view>
+          </view>
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view id="btnSelect" class="btn-solid btn-theme" bindtap="gotopage">选好了</view>
+</view>

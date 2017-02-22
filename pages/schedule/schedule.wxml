@@ -1,0 +1,131 @@
+<view class="movie-list-wrapper">
+    <view class="blurs-img">
+      <view style="">
+        <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="blurs"></image>
+      </view>
+    </view>
+    <view class="movie-list-inner">
+      <scroll-view id="iSlider-wrapper" class="scroll-view_H" scroll-x="true" style="width: 100%" scroll-left="{{scroll_left}}" scroll-into-view="{{toView}}" bindscroll="scroll">
+        <!--<view class="islider-outer">-->
+        <view  class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{animationData}}">
+            <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="scroll-view-item_H" ></image>
+          </view>
+          <view  class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{animationData}}">
+            <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="scroll-view-item_H" ></image>
+          </view>
+        <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
+          <view id="green{{index}}" class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{index == 0 ? animationData1 : animationData}}">
+            <image src="{{item.movie_poster_mini}}" class="scroll-view-item_H" data-type="{{index}}"></image>
+          </view>
+          
+        <!--</view>-->
+        </block>
+      </scroll-view>
+    </view>
+</view>
+
+<view class="schedule-detail">
+  <view class="movie-info">
+    <view class="h3">樱桃小丸子：来自意大利的少年</view>
+    <view class="show-movie-detail" bindtap="navigateToMovieData">查看详情</view>
+  </view>
+  <view title="开场前15分钟停止在线售票" class="notice">
+    <icon class="iconfont icon-notice"></icon>
+    <text>温馨提示：开场前15分钟停止在线售票</text>
+  </view>
+  <view class="tab-scl">
+    <scroll-view class="tab-scl-items" style="width: 146px; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px);">
+      <view date="20160928" class="tab-scl-list active">
+        <a href="javacript:void(0)">今天 9-28</a>
+      </view>
+      <view date="20160929" class="tab-scl-list">
+        <a href="javacript:void(0)">明天 9-29</a>
+      </view>
+    </scroll-view>
+  </view>
+  <view haspc="false" member_type="0" class="mod open-card-tips m-hide">
+    <icon class="icon-card"></icon>
+    <text id="cardTips">开通会员卡，买票更优惠</text>
+  </view>
+
+
+  <view showtimesiscroll="showtimesIScroll" showtime="20160928">
+    <scroll-view showtime="20160928" class="showtime-list">
+      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
+        <icon class="iconfont icon-morning"></icon>
+
+        <view class="scl-time">
+          <view class="scl-time-wrap">
+            <view class="time">10:00</view>
+            <view class="end-time">11:53 散场</view>
+          </view>
+        </view>
+
+        <view class="scl-info">
+          <text class="type">国语2D</text>
+          <view class="movie-hall">2号厅</view>
+        </view>
+
+        <view class="scl-price">
+          <view class="price">
+            <text>36</text>元
+          </view>
+          <view class="origin-price">60元</view>
+        </view>
+        <view class="scl-buy" bindtap="navigateToSeat">
+          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
+        </view>
+      </view>
+      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
+        <icon class="iconfont icon-morning"></icon>
+
+        <view class="scl-time">
+          <view class="scl-time-wrap">
+            <view class="time">10:00</view>
+            <view class="end-time">11:53 散场</view>
+          </view>
+        </view>
+
+        <view class="scl-info">
+          <text class="type">国语2D</text>
+          <view class="movie-hall">2号厅</view>
+        </view>
+
+        <view class="scl-price">
+          <view class="price">
+            <text>36</text>元
+          </view>
+          <view class="origin-price">60元</view>
+        </view>
+        <view class="scl-buy" bindtap="navigateToSeat">
+          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
+        </view>
+      </view>
+      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
+        <icon class="iconfont icon-morning"></icon>
+
+        <view class="scl-time">
+          <view class="scl-time-wrap">
+            <view class="time">10:00</view>
+            <view class="end-time">11:53 散场</view>
+          </view>
+        </view>
+
+        <view class="scl-info">
+          <text class="type">国语2D</text>
+          <view class="movie-hall">2号厅</view>
+        </view>
+
+        <view class="scl-price">
+          <view class="price">
+            <text>36</text>元
+          </view>
+          <view class="origin-price">60元</view>
+        </view>
+        <view class="scl-buy" bindtap="navigateToSeat">
+          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

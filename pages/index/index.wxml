@@ -1,0 +1,31 @@
+<!--index.wxml-->
+
+<view class="movie-list">
+  <block wx:for-items="{{movies}}" wx:key="{{index}}">
+    <view  class="movie-item clearfix">
+      <view class="items" bindtap="movietap" data-movieno="{{item.movieno}}">
+        <view class="movie-img" >
+        <image class="index-movielist-image" src="{{item.movie_poster_mini}}"></image></view>
+        <view class="cont" >
+          <view class="hd clearfix">
+            <text class="h3">{{item.name}}</text>
+            <view class="movie-type">
+              <view class="single">3D</view>
+            </view>
+            <view wx:if="{{item.score > 0}}" class="score">
+              <text>{{item.score}}</text>
+              分
+            </view>
+          </view>
+          <text class="desc desc-text">{{item.remark}}</text>
+          <view class="status">
+	          <text class="desc-text-color desc-text">最近场次：</text>
+            <text class="desc-text-color desc-text">19:10</text>
+          </view>
+        </view>
+      </view>
+      <view class="btn-hollow buy-ticket">购票</view>
+      <view class="btn-virtual" bindtap="scheduletap"></view>
+      </view>
+  </block>
+</view>
