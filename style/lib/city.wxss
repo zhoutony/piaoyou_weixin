@@ -1,0 +1,33 @@
+.item-city .curr{
+    background:white;
+    padding:30rpx 30rpx;
+}
+.item-city .curr  text{
+    font-size:32rpx;
+}
+.item-city .curr .text{
+    color:#00cf7a;
+    padding-right:30rpx;
+}
+.item-city .curr .info{
+    color:#999;
+}
+.item-city  .city-dt{
+    padding:20rpx;
+}
+.item-city  .city-dd{
+    background:white;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+.item-city  .city-dd text{
+    height:88rpx;
+    line-height:88rpx;
+    text-align:center;
+    width:25%;
+    border-left:1rpx solid #e5e5e5;
+    border-bottom:1rpx solid #e5e5e5;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    
+}

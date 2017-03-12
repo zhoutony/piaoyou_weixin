@@ -1,0 +1,90 @@
+<view class="wrap item-flexbox-v">
+  <view class="item-search-city item-flexbox-v-c">
+      <view class="item-content">
+          <input type="text" placeholder="找城市" />
+      </view>
+      <!--item-content end-->
+  </view>
+  <!--search end-->
+  <scroll-view class="item-flex scroll-y" scroll-y="true">
+     <view class="item-city">
+        <view class="curr">
+            <text class="text">北京</text>
+            <text class="info">当前定位城市</text>
+        </view>
+        <!--curr end-->
+        <view class="city-dt">最近访问</view>
+        <view class="city-dd item-flexbox">
+            <text>北京</text>
+        </view>
+        <!--city-dd end-->
+        <view class="city-dt">热门</view>
+        <view class="city-dd item-flexbox">
+            <text>北京</text>
+            <text>上海</text>
+            <text>广州</text>
+            <text>深圳</text>
+            <text>成都</text>
+            <text>南京</text>
+            <text>西安</text>
+            <text>武汉</text>
+            <text>重庆</text>
+            <text>大连</text>
+            <text>济南</text>
+            <text>长春</text>
+        </view>
+        <!--city-dd end-->
+        <view class="city-dt">A</view>
+        <view class="city-dd item-flexbox">
+            <text>北京</text>
+            <text>上海</text>
+            <text>广州</text>
+            <text>深圳</text>
+            <text>成都</text>
+            <text>南京</text>
+            <text>西安</text>
+            <text>武汉</text>
+            <text>重庆</text>
+            <text>大连</text>
+            <text>济南</text>
+            <text>长春</text>
+        </view>
+        <!--city-dd end-->
+        <view class="city-dt">B</view>
+        <view class="city-dd item-flexbox">
+            <text>北京</text>
+            <text>上海</text>
+            <text>广州</text>
+            <text>深圳</text>
+            <text>成都</text>
+            <text>南京</text>
+            <text>西安</text>
+            <text>武汉</text>
+            <text>重庆</text>
+            <text>大连</text>
+            <text>济南</text>
+            <text>长春</text>
+        </view>
+        <!--city-dd end-->
+        <view class="city-dt">C</view>
+        <view class="city-dd item-flexbox">
+            <text>北京</text>
+            <text>上海</text>
+            <text>广州</text>
+            <text>深圳</text>
+            <text>成都</text>
+            <text>南京</text>
+            <text>西安</text>
+            <text>武汉</text>
+            <text>重庆</text>
+            <text>大连</text>
+            <text>济南</text>
+            <text>长春</text>
+        </view>
+        <!--city-dd end-->
+     </view>
+     <!--item-city end-->
+  </scroll-view>
+  <!--scroll-view end-->
+</view>
+<!--wrap end-->

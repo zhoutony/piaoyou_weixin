@@ -1,0 +1,11 @@
+@import 'lib/flexbox.wxss';
+@import 'lib/images.wxss';
+@import 'lib/btn.wxss';
+@import 'lib/item.wxss';
+@import 'lib/label.wxss';
+@import 'lib/search.wxss';
+@import 'lib/city.wxss';
+
+@import 'cinema.wxss';
+@import 'movielist.wxss';
+ 

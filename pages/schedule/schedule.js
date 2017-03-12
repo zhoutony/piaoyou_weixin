@@ -29,11 +29,11 @@ Page({
         })
 
         this.animation = animation;
-        this.animation.scale(.6, .6).step();
+        this.animation.scale(.8, .8).step();
         this.setData({
             animationData: this.animation.export()
         })
-        this.animation.scale(.7, .7).step();
+        this.animation.scale(1, 1).step();
         this.setData({
             animationData1: this.animation.export()
         })

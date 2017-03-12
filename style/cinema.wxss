@@ -1,0 +1,17 @@
+.item-cinema .name,
+.item-cinema .address{
+    display:block;
+}
+.item-cinema .name{
+    font-size:34rpx;
+    font-weight:bold;
+    color:#333;
+}
+.item-cinema .address{
+    color:#888;
+    padding:20rpx 0;
+}
+.item-cinema .price{
+    font-size:30rpx;
+    color:#ff686b;
+}

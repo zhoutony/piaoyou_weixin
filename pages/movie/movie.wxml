@@ -1,4 +1,150 @@
-<view class="m-detail">
+<view class="wrap item-flexbox-v movieinfo">
+  <scroll-view class="item-flex scroll-y" scroll-y="true">
+    <view class="movieinfobox item-flexbox-v-c">
+      <image src="http://static.wepiao.com/movie/2016/9/7_0/201609070957237950.jpg" class="blurimg"></image>
+      <view class="item-bar">
+          <view class="img-box">
+              <image src="//p0.meituan.net/movie/0ec2ddc2bed2bad93017aacc473be337387115.jpg@177w_249h.webp"></image>
+          </view>
+          <!--img-box end-->
+      </view>
+      <!--item-bar end-->
+      <view class="item-content">
+          <text class="name">一条狗的使用</text>
+          <view class="otherinfo">
+            <text class="score">9.1分</text>
+            <text class="cunscore">(467634评分)</text>
+          </view>
+          <!--otherinfo end-->
+          <text class="form">剧情 / 喜剧 / 冒险 | 美国</text>
+          <text class="time">2017年03月03日上映 | 101分钟</text>
+      </view>
+      <!--item-content end-->
+    </view>
+    <!--movieinfobox end-->
+    <view class="movietxt">
+        <text class="hide-txt">影片讲述了一条狗经历多次重生，在一次次生命的轮回中寻找不同的使命，最后又回到了最初的主人身边的故事。一个温顺可爱的狗狗贝利与主人意外的相遇开始了主人和汪星人的四世宠物情缘。贝利在成长过程中，帮助主人找到人生的伴侣，在危难之际拯救全家人的生命，到之后化身警犬破案，狗狗为主人奉献了自己的全部</text>
+    </view>
+    <!--movietxt end-->
+    <view class="info-show">
+      <text class="title">剧照</text>
+      <scroll-view class="scroll-x" scroll-x="true">
+      <view class=" item-flexbox jobinfo">
+       <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+         <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+              <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+            <text class="name">丹尼斯</text>
+            <text class="job">导演</text>
+          </view>
+          <!--img-box end-->
+           
+          </view>
+      </scroll-view>
+
+      <!--scroll-view end-->
+    </view>
+
+    <!--info-show end-->
+    <view class="info-show">
+      <text class="title">主创</text>
+      <scroll-view class="scroll-x" scroll-x="true">
+      <view class=" item-flexbox">
+       <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          <view i class="img-box item-flex-0 ">
+            <image src="//p1.meituan.net/movie/816948820288778c5a44fee5abbfa93c85612.jpg@180w_140h_1e_1c"></image>
+          </view>
+          <!--img-box end-->
+          </view>
+      </scroll-view>
+
+      <!--scroll-view end-->
+    </view>
+
+    <!--info-show end-->
+  </scroll-view>
+
+  <!--scroll-view end-->
+  <navigator url="/pages/select_seat/select_seat" class="item-ticket">
+    <text>立即购票</text>
+  </navigator>
+
+  <!--item-tiecket end-->
+</view>
+
+<!--wrap end-->
+
+
+
+
+<!--------------------------->
+
+<!--<view class="m-detail">
     <view class="movie-poster">
         <image src="http://static.wepiao.com/movie/2016/9/7_0/201609070957237950.jpg" class="blurs"></image>
     </view>
@@ -40,7 +186,7 @@
                 <view class="arrow-ent bottom"></view>
             </view>
         </view>
-     </view>
+     </view>-->
 <!--      <view class="film-maker-wrapper">
           <view>主创</view>
           <view class="film-maker-list">
@@ -57,4 +203,4 @@
               </block>
            </view>
       </view> -->
-</view>
+<!--</view>-->

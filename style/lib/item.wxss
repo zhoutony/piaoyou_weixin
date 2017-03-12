@@ -1,0 +1,14 @@
+.item-link{
+    background:white;
+    -webkit-box-sizing:border-box;
+    box-sizing:border-box;
+    min-height:88rpx;
+    padding:30rpx 20rpx;
+    border-bottom:1rpx solid #e5e5e5;
+}
+.item-link .item-bar{
+    margin-right:20rpx;
+}
+.item-link .item-tool{
+    margin-left:20rpx;
+}

@@ -1,0 +1,29 @@
+.item-flexbox,
+.item-flexbox-v,
+.item-flexbox-v-c,
+.item-flexbox-v-e{
+	display:-webkit-flex;
+    display:flex;
+}
+.item-content,
+.item-flex{
+	-webkit-flex: 1;
+  	flex: 1;
+}
+.item-flex-0 {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+.item-flexbox-v-c{
+	-webkit-align-items:center;
+    align-items:center;
+}
+.item-flexbox-v-e{
+	-webkit-align-items:flex-end;
+    align-items:flex-end;
+}
+
+.item-flexbox-v{
+	-webkit-flex-direction:column;
+    flex-direction:column;
+}
