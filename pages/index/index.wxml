@@ -13,7 +13,7 @@
   <!--search end-->
 
     <!--menu end-->
-    <swiper class="item-swiper" indicator-active-color="#00948d" autoplay="true" indicator-dots="true">
+    <swiper class="item-swiper" indicator-active-color="#00948d" autoplay="true" indicator-dots="true" circular="true">
       <swiper-item class="img-box">
         <image mode="aspectFit" src="https://smart-image.wepiao.com/busines/2017/02/14/1487037391_180.jpg" />
       </swiper-item>
@@ -46,7 +46,7 @@
               <view class="movie-dd">
                 <text class="review">{{item.remark}}</text>
                 <text class="time">最近场次:19:10</text>
-                <text class="viewtime">上映日期：{{item.release_time}}</text>
+                <text class="viewtime">上映日期：{{item.date}}</text>
               </view>
             </view>
 
@@ -54,8 +54,8 @@
             <view class="item-tool item-flexbox-v" data-movieno="{{item.movieno}}" bindtap="scheduletap">
               <view  class="score item-flex">
                 <block wx:if="{{item.score > 0}}">
-                  <text>{{item.score}}</text>
-                  分
+                  <text>{{item.minPrice / 100}}</text>
+                  元起
                   </block>
               </view>
               <view class="btn-default">购票</view>
