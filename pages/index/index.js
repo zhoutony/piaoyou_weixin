@@ -14,8 +14,8 @@ Page({
             let {data} = result;
             if (data)
                 that.setData({
-                    cinema: data.cinema_info.data,
-                    movies: data.movie_list.data,
+                    // cinema: data.cinema_info.data,
+                    movies: data
                 })
         });
     },
@@ -47,6 +47,19 @@ Page({
 
 
         this.loadData(_e);
+
+        wx.getLocation({
+            type: 'gcj02', //返回可以用于wx.openLocation的经纬度
+            success: function(res) {
+                var latitude = res.latitude
+                var longitude = res.longitude
+                // wx.openLocation({
+                // latitude: latitude,
+                // longitude: longitude,
+                // scale: 28
+                // })
+            }
+        })
     },
     scheduletap(e) {
         let data = e.currentTarget.dataset;
