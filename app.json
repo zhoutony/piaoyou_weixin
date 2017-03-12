@@ -6,7 +6,9 @@
     "pages/choose_cinema/choose_cinema",
     "pages/schedule/schedule",
     "pages/select_seat/select_seat",
-    "pages/movie/movie"
+    "pages/movie/movie",
+    "pages/cinema/cinema",
+    "pages/city/city"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -26,6 +28,7 @@
         "selectedIconPath": "img/icon_component_HL.png",
         "text": "购票"
       },
+
       {
         "pagePath": "pages/orders/orders",
         "iconPath": "img/icon_API.png",

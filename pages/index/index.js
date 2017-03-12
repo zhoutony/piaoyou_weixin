@@ -8,10 +8,9 @@ Page({
     loadData(e) {
         var that = this;
         var param = {
-            cinema_info: String.format('public_signal_short={0}&cinema_no={1}',e.public_signal_short,e.cinema_no),
-            movie_list: String.format('public_signal_short={0}&cinema_no={1}',e.public_signal_short,e.cinema_no)
+            cityid: '123'
         };
-        model.post("/batch/api", param, (result, msg)=> {
+        model.post("/movieList.aspx", param, (result, msg)=> {
             let {data} = result;
             if (data)
                 that.setData({
@@ -50,10 +49,11 @@ Page({
         this.loadData(_e);
     },
     scheduletap(e) {
-        wx.navigateTo({url: '../schedule/schedule'})
+        let data = e.currentTarget.dataset;
+        wx.navigateTo({ url: '../cinema/cinema?movieno=' + data.movieno })
     },
     movietap(e) {
         let data = e.currentTarget.dataset;
-        wx.navigateTo({url: '../movie/movie?movieno=${data.movieno}'})
+        wx.navigateTo({url: '../movie/movie?movieno=' + data.movieno})
     }
 });

@@ -1,7 +1,8 @@
 /**
  * Created by vincentyan on 2016/9/28.
  */
-var base = "https://smart.wepiao.com/apiProxy";
+// var base = "https://smart.wepiao.com/apiProxy";
+var base = "http://weiticket.com:8088";
 module.exports = {
     isOk: function (res) {
         return res.errMsg == "request:ok";

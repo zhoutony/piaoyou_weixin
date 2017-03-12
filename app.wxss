@@ -1,13 +1,30 @@
 /** common.wxss **/
 /*view, scroll-view, swiper, icon, text, progress*/
 
+@import 'style/base.wxss';
+
+
+
 page {
-  overflow-x: hidden;
+  overflow: hidden;
   height: 100%;
-  min-width: 16rem; 
-  -webkit-user-select: none;
+  background:white;
   font-family: "San Francisco", "Helvetica Neue", sans-serif, Arial, Verdana, "Trebuchet MS", "Microsoft YaHei", "STXihei";
 }
+
+view,
+text{
+  font-size:28rpx;
+  line-height:1;
+}
+.wrap{
+  height:100%;
+}
+.scroll-y{
+  min-height:50%;
+}
+
+
 
 a, a:hover {
   text-decoration: none;

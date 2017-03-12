@@ -1,0 +1,40 @@
+<view class="wrap  item-flexbox-v">
+  <view class="item-search item-flexbox-v-c">
+      <navigator url="/pages/city/city" class="item-bar">
+          <text class="city">北京</text>
+      </navigator>
+      <!--item-bar end-->
+      <view class="item-content">
+          <input type="text" placeholder="电影院" />
+      </view>
+      <!--item-content end-->
+  </view>
+  <!--search end-->
+  <scroll-view class="item-flex scroll-y" scroll-y="true">
+    <view class="cinemalist">
+        <view class="item-link item-cinema" data-movieno="123" data-cinemano="234" bindtap="scheduletap">
+          <view class="item-flexbox-v-c">
+              <view class="item-content">
+                  <text class="name">北京新华国际影城（大兴店）</text>
+                  <text class="address">黄村东大街火神庙商业广场王府井百货E座5层</text>
+              </view>
+              <!--item-contentr end-->
+              <view class="item-tool">
+                   <text class="price">¥23.9起</text>
+              </view>
+              <!--item-tool end-->
+          </view>
+          <!--end-->
+          <view class="other">
+               <text class="item-label item-label-other">激光巨幕</text>
+               <text class="item-label item-label-other">ATMOS</text>
+               <text class="item-label">多优惠</text>
+          </view>
+          <!--other end-->
+        </view>
+    </view>
+    <!--cinemalist end-->
+  </scroll-view>
+  <!--scroll-view end-->
+</view>
+<!--wrap end-->

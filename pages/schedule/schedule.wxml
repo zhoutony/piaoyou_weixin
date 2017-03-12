@@ -1,4 +1,4 @@
-<view class="movie-list-wrapper">
+<!--<view class="movie-list-wrapper">
     <view class="blurs-img">
       <view style="">
         <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="blurs"></image>
@@ -6,7 +6,7 @@
     </view>
     <view class="movie-list-inner">
       <scroll-view id="iSlider-wrapper" class="scroll-view_H" scroll-x="true" style="width: 100%" scroll-left="{{scroll_left}}" scroll-into-view="{{toView}}" bindscroll="scroll">
-        <!--<view class="islider-outer">-->
+      
         <view  class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{animationData}}">
             <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="scroll-view-item_H" ></image>
           </view>
@@ -17,8 +17,7 @@
           <view id="green{{index}}" class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{index == 0 ? animationData1 : animationData}}">
             <image src="{{item.movie_poster_mini}}" class="scroll-view-item_H" data-type="{{index}}"></image>
           </view>
-          
-        <!--</view>-->
+   
         </block>
       </scroll-view>
     </view>
@@ -128,4 +127,142 @@
       </view>
     </scroll-view>
   </view>
+</view>-->
+
+
+<!--wrap Begin-->
+<view class="wrap item-flexbox-v">
+  <view class="item-link item-cinema">
+    <view class="item-flexbox-v-c">
+      <view class="item-content">
+        <text class="name">北京新华国际影城（大兴店）</text>
+        <text class="address">黄村东大街火神庙商业广场王府井百货E座5层</text>
+      </view>
+
+      <!--item-contentr end-->
+    </view>
+
+    <!--end-->
+    <view class="other">
+      <text class="item-label item-label-other">激光巨幕</text>
+      <text class="item-label item-label-other">ATMOS</text>
+      <text class="item-label">多优惠</text>
+    </view>
+
+    <!--other end-->
+  </view>
+
+  <!--item-cinema end-->
+  <scroll-view class="scroll-x movieimglist" scroll-x="true">
+    <view class=" item-flexbox-v-e">
+      <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
+        <view id="green{{index}}" class="img-box item-flex-0 curr" bindtap="tapMovieItem" animation="{{index == 0 ? animationData1 : animationData}}">
+          <image src="{{item.movie_poster_mini}}" data-type="{{index}}"></image>
+        </view>
+
+        <!--img-box end-->
+      </block>
+    </view>
+
+    <!--movieimglist end-->
+  </scroll-view>
+
+  <!--scroll-view end-->
+  <view class="showtime">
+    <view class="showmovie">
+      <view class="item-flexbox-v-c movie-dt">
+        <text class="name">一条狗的使命</text>
+        <view>
+          <text>6.8</text>分
+        </view>
+      </view>
+
+      <!--movie-dt end-->
+      <view class="item-flexbox-v-c movie-dd">
+        <text class="ohtertxt">剧情 | 剧情 | 冒险 | 116分钟 | 动作 | 丹妮斯 | 丹妮斯 | 丹妮斯 </text>
+      </view>
+
+      <!--movie-dd end-->
+    </view>
+
+    <!--showmovie end-->
+    <view class="item-flexbox-v-c cinematips">
+      <text>温馨提示：开场前15分钟停止在线售票</text>
+    </view>
+
+    <!--cinematips end-->
+    <scroll-view class="item-time  scroll-x" scroll-x="true">
+      <view class="item-flexbox item-timebox">
+        <text class="time curr">今天 03-11</text>
+        <text class="time">明天 03-12</text>
+        <text class="time">后天 03-13</text>
+      </view>
+    </scroll-view>
+
+    <!--item-time end-->
+    <scroll-view class="item-flex scroll-y" scroll-y="ture">
+      <navigator url="/pages/select_seat/select_seat" class="item-link item-schedule">
+        <view class="schedule item-flexbox-v-c">
+          <view class="item-bar">
+            <text class="start-time">18:30</text>
+            <text class="end-time">20:30结束</text>
+          </view>
+
+          <!--item-bar end-->
+          <view class="item-content">
+            <text class="language">英语</text>
+            <text class="theater">11号60帧激光厅</text>
+          </view>
+
+          <!--item-content end-->
+          <view class="item-tool">
+            <text class="oldprice">¥33.9</text>
+            <text class="newprice">¥31.6</text>
+          </view>
+
+          <!--item-tool end-->
+          <view class="item-tool">
+            <text class="item-label">选座购票</text>
+          </view>
+
+          <!--item-tool end-->
+        </view>
+
+        <!--schedule end-->
+      </navigator>
+      <navigator url="/pages/select_seat/select_seat" class="item-link item-schedule">
+        <view class="schedule item-flexbox-v-c">
+          <view class="item-bar">
+            <text class="start-time">18:30</text>
+            <text class="end-time">20:30结束</text>
+          </view>
+
+          <!--item-bar end-->
+          <view class="item-content">
+            <text class="language">英语</text>
+            <text class="theater">11号60帧激光厅</text>
+          </view>
+
+          <!--item-content end-->
+          <view class="item-tool">
+            <text class="oldprice">¥33.9</text>
+            <text class="newprice">¥31.6</text>
+          </view>
+
+          <!--item-tool end-->
+          <view class="item-tool">
+            <text class="item-label">选座购票</text>
+          </view>
+
+          <!--item-tool end-->
+        </view>
+
+        <!--schedule end-->
+      </navigator>
+    </scroll-view>
+  </view>
+
+  <!--showtime end-->
 </view>
+
+<!--wrap end-->

@@ -1,0 +1,42 @@
+
+.item-search{
+    border-top:1rpx solid #e5e5e5;
+    border-bottom:1rpx solid #e5e5e5;
+    height:88rpx;
+    padding:0 30rpx;
+}
+.item-search .item-bar{
+    border-right:1rpx solid  #e5e5e5;
+    line-height:88rpx;
+    padding-right:30rpx;
+}
+.item-search .city{
+    color:#666;
+}
+.item-search .city:after{
+    width:8rpx;
+    height:8rpx;
+    border-bottom:4rpx solid #666;
+    border-left:4rpx solid #666;
+    content:'';
+    display:inline-block;
+    vertical-align: middle;
+    transform: rotate(-45deg);   
+    margin:-4rpx 0 0 10rpx;
+}
+.item-search input{
+    padding:0 30rpx;
+}
+
+
+.item-search-city{
+    padding:20rpx 30rpx;
+    
+}
+.item-search-city .item-content input{
+    background:white;
+    height:66rpx;
+    border:1rpx solid #eee;
+    padding:0 30rpx;
+
+}
