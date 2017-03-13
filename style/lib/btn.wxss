@@ -1,10 +1,10 @@
 .btn-default{
     min-width:96rpx;
-    height:68rpx;
+    height:58rpx;
     text-align:center;
-    line-height:68rpx;
-    border:1rpx solid #46c747;
-    color:#46c747;
+    line-height:58rpx;
+    border:1rpx solid #4DB3AE;
+    color:#4DB3AE;
     display:block;
     -webkit-border-radius:6rpx;
     border-radius:6rpx;

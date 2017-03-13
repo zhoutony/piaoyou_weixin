@@ -36,7 +36,7 @@
         <!--city-dd end-->
         <view class="city-dt">A</view>
         <view class="city-dd item-flexbox">
-            <text>北京北京北京</text>
+            <text>北京</text>
             <text>上海</text>
             <text>广州</text>
             <text>深圳</text>
