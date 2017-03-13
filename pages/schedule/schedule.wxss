@@ -17,6 +17,7 @@
   line-height: 30rpx;
   padding: 0 10rpx;
   font-size: 20rpx;
+ 
 }
 
 .item-schedule {
@@ -73,14 +74,14 @@
 }
 
 .item-schedule  .oldprice {
-  color: #888;
+  color: #898989;
   text-decoration: line-through;
   padding-top: 10rpx;
 }
 
 .item-schedule  .newprice {
   padding-top: 26rpx;
-  color: #ff686b;
+  color: #4DB3AE;
   font-size: 32rpx;
 }
 
@@ -88,6 +89,9 @@
   display: block;
   text-align: center;
   margin-right: 0;
+  border-color:#4DB3AE;
+  background:#4DB3AE;
+  color:#fff;
 }
 
 .cinematips {
@@ -139,13 +143,13 @@
 .item-time .time:after {
   bottom: 0rpx;
   height: 4rpx;
-  background: #ff686b;
+  background: #4DB3AE;
   display: none;
   z-index: 2;
 }
 
 .item-time .curr {
-  color: #ff686b;
+  color: #4DB3AE;
   font-weight: bold;
 }
 
@@ -203,7 +207,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  border: 6rpx solid #ff686b;
+  border: 6rpx solid #4DB3AE;
 }
 
 .movieimglist .curr:before {
@@ -211,7 +215,7 @@
   height: 0;
   border-left: 8px solid transparent;
   border-right: 8px solid transparent;
-  border-top: 16rpx solid #ff686b;
+  border-top: 16rpx solid #4DB3AE;
   left: 50%;
   bottom: -16rpx;
   margin-left: -8rpx;

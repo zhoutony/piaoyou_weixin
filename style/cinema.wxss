@@ -8,10 +8,10 @@
     color:#333;
 }
 .item-cinema .address{
-    color:#888;
+    color:#898989;
     padding:20rpx 0;
 }
 .item-cinema .price{
     font-size:30rpx;
-    color:#ff686b;
+    color:#4DB3AE;
 }

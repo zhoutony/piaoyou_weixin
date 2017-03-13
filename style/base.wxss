@@ -5,6 +5,8 @@
 @import 'lib/label.wxss';
 @import 'lib/search.wxss';
 @import 'lib/city.wxss';
+@import 'lib/mask.wxss';
+
 
 @import 'cinema.wxss';
 @import 'movielist.wxss';

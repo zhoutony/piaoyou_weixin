@@ -69,3 +69,25 @@
   </view>
 
   <!--wrap end-->
+
+<!--mask Begin-->
+<view class="mask-default" style="display:none">
+  <view class="mask-box">
+      <view class="mask-hd">
+        <text class="title">提示</text>
+      </view>
+      <!--mask-hd-->
+      <view class="mask-con">
+        <text class="content-txt">这是一个模态弹窗</text>
+      </view>
+      <!--mask-con end-->
+      <view class="mask-bd item-flexbox">
+          <view class="item-flex">取消</view>
+          <view class="line"></view>
+          <view class="item-flex btn-color">确定</view>
+      </view>
+      <!--mask-bd end-->
+  </view>
+  <!--mask-box end-->
+</view>
+<!--mask End-->
