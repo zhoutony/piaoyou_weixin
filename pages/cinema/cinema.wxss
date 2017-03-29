@@ -1,1 +1,28 @@
 /* pages/cinema/cinema.wxss */
+.movielist .img-box {
+    width:200rpx;
+    height:300rpx;
+}
+.movielist .main-info {
+    padding:20rpx 0 20rpx;
+}
+.movielist .other-info .actor{
+    overflow:auto;
+    text-overflow:inherit;
+    -webkit-line-clamp: 0;
+    line-height:1.5;
+}
+.movielist .other-info  text{
+    font-size:24rpx;
+    padding-top:14rpx;
+}
+
+.item-search-city{
+    background:eee;
+    padding:0 30rpx ;
+    border-bottom:1rpx solid #e8e8e8;
+}
+.item-search-city input{
+    margin-left:20rpx;
+    border:1rpx solid #e8e8e8;
+}

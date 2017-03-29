@@ -135,5 +135,9 @@ Page({
     cookie...... show_service_fee-1003421 = '1|2'
     */
     wx.navigateTo({ url: '../payment/payment?mpid=52270213&sTempOrderID=16121417220532822&movieno=6917' })
-  }
+  },
+  ordertap : function(e){
+    let data = e.currentTarget.dataset;
+        wx.navigateTo({ url: '../orders/orders' }) 
+   }
 })

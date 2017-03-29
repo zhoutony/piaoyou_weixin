@@ -1,40 +1,172 @@
-<view class="wrap  item-flexbox-v">
-  <view class="item-search item-flexbox-v-c">
-      <navigator url="/pages/city/city" class="item-bar">
-          <text class="city">北京</text>
-      </navigator>
-      <!--item-bar end-->
-      <view class="item-content">
-          <input type="text" placeholder="电影院" />
-      </view>
-      <!--item-content end-->
-  </view>
-  <!--search end-->
-  <scroll-view class="item-flex scroll-y" scroll-y="true">
-    <view class="cinemalist">
-        <view class="item-link item-cinema" data-movieno="123" data-cinemano="234" bindtap="scheduletap">
-          <view class="item-flexbox-v-c">
-              <view class="item-content">
-                  <text class="name">北京新华国际影城（大兴店）</text>
-                  <text class="address">黄村东大街火神庙商业广场王府井百货E座5层</text>
-              </view>
-              <!--item-contentr end-->
-              <view class="item-tool">
-                   <text class="price">¥23.9起</text>
-              </view>
-              <!--item-tool end-->
-          </view>
-          <!--end-->
-          <view class="other">
-               <text class="item-label item-label-other">激光巨幕</text>
-               <text class="item-label item-label-other">ATMOS</text>
-               <text class="item-label">多优惠</text>
-          </view>
-          <!--other end-->
+<view class="wrap item-flexbox-v">
+   <view class="movielist item-link">
+        <view class="bar-block">
+            <view class="img-box">
+               <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+            </view>
         </view>
+        <!--bar-block end-->
+        <view class="con-block" bindtap = "movietap">
+              <view class="main-info">
+                <text class="name">金刚：骷髅岛</text>
+              </view>
+              <!--main-info end-->
+              <view class="other-info">
+                <text class="director">导演：乔丹·沃格特-罗伯茨</text>
+                <text class="actor">演员：汤姆·希德勒斯顿 / 布丽·拉尔森 / 塞缪尔·杰克逊 / 约翰·古德曼 / 景甜</text>
+                <text class="type">类型：动作 / 爱情 / 冒险</text>
+                <text class="date">日期：2017-03-24上映</text>
+                <text class="time">时长：119分钟</text>
+                </view>
+              <!--other-info end-->
+        </view>
+        <!--con-block end-->
+   </view>
+   <!--movieinfo end-->
+   <view class="item-search-city item-flexbox-v-c">
+   <view class="select-city" bindtap='citytap'>
+      <text>北京市</text>
     </view>
-    <!--cinemalist end-->
+    <view class="item-flex">
+      <input type="text" placeholder="找影院" />
+    </view>
+  </view>
+  <!--item-search-city  end-->
+  <!--scroll-view Begin-->
+  <scroll-view class="item-flex scroll-y" scroll-y="true">
+     <view class="area">
+            <view class="area-dt">
+                <text>海淀区</text>
+            </view>
+            <!--area-dt end-->
+            <view class="area-dd cinemalist">
+                <view class="item-link"  bindtap="scheduletap">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+                <view class="item-link">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+                <view class="item-link"  bindtap="scheduletap">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+            </view>
+            <!--area-dd end-->
+            <view class="area-dt">
+                <text>海淀区</text>
+            </view>
+            <!--area-dt end-->
+            <view class="area-dd cinemalist">
+                <view class="item-link">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+                <view class="item-link">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+                <view class="item-link">
+                    <view class="con-block">
+                        <text class="name">北京万达影城</text>
+                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
+                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                    </view>
+                    <!--con-block end-->
+                     <view class="buyticket">
+                          <text class="tag-seat">座</text>
+                          <text class="old-price">￥90.00</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+                </view>
+                <!--item-link end-->
+            </view>
+            <!--area-dd end-->
+     </view>
+     <!--area end-->
   </scroll-view>
-  <!--scroll-view end-->
+  <!--scroll-view End-->
 </view>
+
 <!--wrap end-->

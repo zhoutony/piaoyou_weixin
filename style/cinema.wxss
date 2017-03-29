@@ -1,17 +1,52 @@
-.item-cinema .name,
-.item-cinema .address{
-    display:block;
+.cinemalist .name, .cinemalist .address, .cinemalist .schedule,
+.cinemalist .other, .cinemalist .buyticket .old-price,
+.cinemalist .buyticket .price {
+  display: block;
 }
-.item-cinema .name{
-    font-size:34rpx;
-    font-weight:bold;
-    color:#333;
+
+.cinemalist .name {
+  font-size: 30rpx;
+  color: #333;
+  line-height: 1.4;
 }
-.item-cinema .address{
-    color:#898989;
-    padding:20rpx 0;
+
+.cinemalist .address, .cinemalist .schedule {
+  font-size: 22rpx;
+  padding: 10rpx 0 0;
+  line-height: 1.4;
 }
-.item-cinema .price{
-    font-size:30rpx;
-    color:#4DB3AE;
+
+.cinemalist .other {
+  padding: 5rpx 0 0;
+}
+
+.cinemalist .buyticket {
+  text-align: right;
+}
+
+.cinemalist .buyticket .old-price {
+  font-size: 24rpx;
+  color: #c2c2c2;
+  text-decoration: line-through;
+  padding: 10rpx 0;
+}
+
+.cinemalist .buyticket .price {
+  color: #00968d;
+  font-size: 32rpx;
+  padding: 0;
+}
+
+.area .area-dt {
+  background: #f7f7f7;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 30rpx;
+  color: #0b8e87;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.area .area-dd {
+  margin-top: -1rpx;
+  display: none1;
 }

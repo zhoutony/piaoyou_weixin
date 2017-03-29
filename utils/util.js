@@ -1,4 +1,5 @@
 /* String */
+import model from 'model.js';
 String.format = function () {
     var args = arguments;
     if (args.length == 0) return "";
@@ -49,8 +50,31 @@ function showModal(title, content, callback) {
   })
 }
 
+function getLocationMethod(callback){
+    wx.getLocation({
+      type: 'wgs84',
+      success: function(res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+        var speed = res.speed
+        var accuracy = res.accuracy
+        var param = {
+          "longitude": res.longitude.toString(),
+          "latitude": res.latitude.toString()
+        }
+        model.post("/queryLocationByCoordinate.aspx?longitude="+res.longitude+"&latitude="+res.latitude, {}, (result, msg)=> {
+            let {data} = result;
+            if (data)
+                callback && callback(data);
+        });
+        
+      }
+    })
+}
+
 module.exports = {
   formatTime: formatTime,
   showModal: showModal,
-  String: String
+  String: String,
+  getLocationMethod: getLocationMethod
 }

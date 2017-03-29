@@ -1,0 +1,189 @@
+.schedule-cinema {
+  padding: 30rpx 20rpx;
+}
+
+.movie-scroll scroll-view {
+  height: 210rpx;
+}
+
+.movie-scroll .img-box {
+  width: 120rpx;
+  height: 160rpx;
+  margin-right: 23rpx;
+  position:relative;
+  overflow:inherit;
+}
+.movie-scroll .img-box:before,
+.movie-scroll .img-box:after{
+    content:'';
+    display:block;
+    position:absolute;
+}
+.movie-scroll .img-box:before{
+    width:0;
+    height:0;
+    bottom:-20rpx;
+    left:50%;
+    margin-left:-8rpx;
+    border-top:16rpx solid transparent;
+    border-right:16rpx solid transparent;
+    border-left:16rpx solid transparent;
+    border-bottom:16rpx solid #00968e;
+    z-index: 10;
+    display:none;
+}
+.movie-scroll .img-box:after{
+    border:1rpx solid red;
+    top:0;
+    right:0;
+    bottom:0;
+    left:0;
+}
+.movie-scroll  .curr {
+  width: 140rpx;
+  height: 187rpx;
+ 
+}
+.movie-scroll  .curr:after{
+    border:2rpx solid #00968e;
+}
+.movie-scroll  .curr:before{
+    display:block;
+}
+.movie-scroll .name {
+  display: block;
+  font-size: 30rpx;
+  
+  padding: 20rpx 0 0;
+ 
+}
+
+.showlist .type {
+  width: 60rpx;
+  height: 60rpx;
+  background: #00968e;
+}
+
+.showlist .time {
+  padding: 0 40rpx;
+}
+
+.showlist .time text {
+  display: block;
+}
+
+.showlist .time .start-time {
+  color: #00968e;
+  padding-bottom: 10rpx;
+}
+
+.showlist .time  .end-time {
+  color: #666;
+  font-size: 22rpx;
+}
+
+.showlist .time  .end-time:after {
+  content: '结束';
+}
+
+.showlist .info .ver {
+  color: #00968e;
+}
+
+.showlist .info .half {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.showlist .price:after {
+  display: none;
+}
+
+/****/
+
+.seat-movie-title {
+  padding: 30rpx 20rpx;
+  border-bottom: 1rpx solid #e5e5e5;
+}
+
+.seat-movie-title .item-content text {
+  display: block;
+}
+
+.seat-movie-title .item-content .name {
+  font-size: 34rpx;
+}
+
+.seat-movie-title .item-content .info {
+  color: #888;
+  padding: 10rpx 0 0;
+  font-size: 24rpx;
+}
+
+.seat-movie-title .item-label {
+  border-color: #4db3ae;
+  color: #4db3ae;
+}
+
+.seat-select {
+  background: #e9e9e9;
+}
+
+.seat-screen {
+  text-align: center;
+  padding: 30rpx 20rpx;
+}
+
+.seat-info {
+  padding: 0;
+  position: relative;
+  background: #fff;
+  z-index: 1;
+}
+
+.seat-info .item-ticket {
+  width: 280rpx;
+  height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+  display: block;
+  border: none;
+  background: #4db3ae;
+  color: white;
+  -webkit-border-radius: 0;
+  border-radius: 0;
+  margin-right: 0;
+  font-size: 30rpx;
+}
+
+.seat-info .not-ticket {
+  background: #d8d8d8;
+}
+
+.seat-info .seat-tips {
+  height: 80rpx;
+  padding-left: 10rpx;
+  text-align: center;
+  position: ralative;
+  z-index: 0;
+}
+
+.item-seats {
+  width: 100%;
+}
+
+.seat-info .seat-txt {
+  padding: 0 10rpx;
+  color: #666;
+  display: block;
+}
+
+.seat-info .seat-tips .item-label {
+  text-align: center;
+}
+
+.seat-info .seat-phone {
+  border-top: 1px solid #e5e5e5;
+  height: 87rpx;
+  padding: 0 20rpx;
+}

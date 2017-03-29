@@ -1,0 +1,37 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content item-flexbox-v">
+      <view class="mask-header">
+          <text class="tips"></text>
+          <view class="logo"></view>
+          <text class="title">兑换码绑定</text>
+      </view>
+      <!--mask-header end-->
+       <scroll-view class="mask-con item-flex scroll-y" scroll-y="true">
+          <view class="formlist">
+               <view class="form-box item-flexbox-v-c">
+                      <input type="number" class="item-flex" placeholder="请输入兑换码" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="clear" size="20"  /></button>
+                </view>
+                <view class="form-box item-flexbox-v-c">
+                      <input type="number" class="item-flex"  placeholder="请输入手机号" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="clear" size="20"  /></button>
+                </view>
+                
+                <text class="info-txt">兑换码可用于购票支付使用，请注册在有效期内使用</text>
+                <text class="error-text">信息不完全</text>
+                <view class="form-btns">
+                  <button type="primary" >立即绑定</button>
+                </view>
+                <!--form-btns end-->
+          </view>
+          <!--formlist end-->
+      </scroll-view>
+      <!--mask-con end-->
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->
