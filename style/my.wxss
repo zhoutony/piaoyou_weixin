@@ -1,0 +1,30 @@
+.my-header{
+    background:#ddd;
+    height:300rpx;
+}
+.my-header .img-box{
+    width:120rpx;
+    height:120rpx;
+    -webkit-border-radius:1000rpx;
+    border-radius:1000rpx;
+}
+.my-header .name{
+    color:#00968e;
+    padding:10rpx 0;
+}
+.my-header .other{
+    text-align:center;
+}
+.my-header .other button{
+    -webkit-border-radius:0;
+    border-radius:0;
+    font-size:34rpx;
+    line-height:1;
+    padding:0 10rpx;
+    margin:10rpx auto ;
+}
+.my-header .other .tel{
+    display:block;
+    font-size:24rpx;
+    color:#00968e;
+}

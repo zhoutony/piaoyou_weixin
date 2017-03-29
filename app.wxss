@@ -2,16 +2,14 @@
 /*view, scroll-view, swiper, icon, text, progress*/
 
 @import 'style/base.wxss';
-
-
-
 page {
+  color:#666;
   overflow: hidden;
   height: 100%;
   background:white;
+   
   font-family: "San Francisco", "Helvetica Neue", sans-serif, Arial, Verdana, "Trebuchet MS", "Microsoft YaHei", "STXihei";
 }
-
 view,
 text{
   font-size:28rpx;
@@ -19,157 +17,17 @@ text{
 }
 .wrap{
   height:100%;
-}
-.scroll-y{
-  min-height:50%;
+ 
 }
 
+ .wrap-auto{
+   height:auto;
+   overflow-y:scroll;
+ }
 
-
-a, a:hover {
-  text-decoration: none;
-  outline: none; 
-}
-
-a, input, textarea {
-  -webkit-tap-highlight-color: transparent;
-}
-
-fieldset, input, select, option {
-  outline: none;
-  border: none;
-  padding: 0;
-  margin: 0;
-}
-
-select, input, label {
-  vertical-align: middle;
-}
-
-button {
-  vertical-align: middle;
-  padding: 0;
-  outline: none;
-}
-
-img {
-  vertical-align: middle;
-}
-
-.bg-body, .bg-schedule {
-  background-color: #ffffff;
-}
-
-.bg-grey {
-  background-color: #f9f9f9; }
-
-.bg-seat {
-  background-color: #e9e9e9; }
-
-.user-select-text {
-  -webkit-user-select: text; }
-
-.user-select-none {
-  -webkit-user-select: none; }
-
-.m-show {
-  display: block;
-  opacity: 1; }
-
-.m-hide {
-  display: none;
-  opacity: 0; }
-
-.clearfix:after, .recharge-card-box dl:after, .orders-detail:after, .orders-detail ul:after, .pay-box li:after {
-  content: ".";
-  display: block;
-  vertical-align: top;
-  height: 0;
-  font-size: 0;
-  line-height: 0;
-  overflow: hidden;
-  clear: both;
-  visibility: hidden; }
-
-html {
-  font-size: 20px; }
-
-@media screen and (min-width: 321px) and (max-width: 375px) {
-  html {
-    font-size: 23.4375px; } }
-@media screen and (min-width: 376px) and (max-width: 767px) {
-  html {
-    font-size: 25.4375px; } }
-@media only screen and (min-width: 768px) {
-  html {
-    font-size: 27.5px; } }
-.container {
-  margin: 0 0.5rem; }
-
-.mod {
-  padding: 0 0.5rem; }
-
-.clearfix:after {
-    content: ".";
-    display: block;
-    vertical-align: top;
-    height: 0;
-    font-size: 0;
-    line-height: 0;
-    overflow: hidden;
-    clear: both;
-    visibility: hidden;
-}
-/*@font-face {
-  font-family: 'iconfont';
-  src: url("../fonts/icomoon.eot?hedajm1");
-  src: url("../fonts/icomoon.eot?hedajm1#iefix") format("embedded-opentype"), url("../fonts/icomoon.ttf?hedajm1") format("truetype"), url("../fonts/icomoon.woff?hedajm1") format("woff"), url("../fonts/icomoon.svg?hedajm1#icomoon") format("svg");
-}
-@font-face {
-  font-family: 'iconmoon';
-  src: url("https://smart-static.wepiao.com/fonts/iconfont.eot?hedajm1");
-  src: url("https://smart-static.wepiao.com/fonts/iconfont.eot?hedajm1#iefix") format("embedded-opentype"), url("https://smart-static.wepiao.com/fonts/iconfont.ttf?hedajm1") format("truetype"), url("https://smart-static.wepiao.com/fonts/iconfont.woff?hedajm1") format("woff"), url("https://smart-static.wepiao.com/fonts/iconfont.svg?hedajm1#iconfont") format("svg");
-}*/
-
-.btn-close, .btn-close-seat, .btn-success-close, .seat, .iconfont {
-    font-family: iconfont;
-    speak: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: middle;
-    display: inline-block;
-}
-
-.iconmoon {
-    font-family: iconmoon;
-    speak: none;
-    font-style: normal;
-    font-variant: normal;
-    text-transform: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    vertical-align: middle;
-    display: inline-block
-}
-.btn-theme {
-    background-color: #2ebdd7;
-    border: 1px solid #2ebdd7;
-    text-align: center;
-}
-.btn-disabled, .btn-theme {
-    margin: .5rem auto;
-    height: 1.75rem;
-    line-height: 1.75rem;
-    color: #fff;
-    font-size: 0.75rem;
-}
-.btn-solid {
-    border-radius: .125rem;
-    display: block;
-    outline: 0;
+ .member-avatar image {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 100%;
+    border: 2px solid #fff;
 }

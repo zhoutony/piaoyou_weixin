@@ -1,0 +1,48 @@
+.scroll-y {
+  min-height: 0;
+}
+
+.scroll-x {
+  min-width: 50%;
+}
+
+.movie-scroll {
+  padding: 20rpx;
+}
+
+.scoll-mid {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.scoll-mid .img-box, .scoll-mid .item-times {
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
+}
+
+.time-scroll {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.time-scroll .scoll-mid {
+  height: 88rpx;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-align-items: center;
+  align-items: center;
+}
+
+.time-scroll .item-times {
+  margin-right: 30rpx;
+  padding:8rpx 10rpx;
+}
+
+.time-scroll .item-times  text {
+  padding-right: 10rpx;
+}
+
+.time-scroll  .curr {
+  color: white;
+  background: #00968e;
+}

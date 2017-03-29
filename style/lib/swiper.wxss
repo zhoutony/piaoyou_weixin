@@ -1,0 +1,8 @@
+.item-swiper {
+  height: 160rpx;
+}
+ 
+.item-swiper .img-box {
+  background: #f2f2f2;
+  
+}

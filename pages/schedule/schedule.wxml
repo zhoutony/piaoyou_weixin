@@ -1,268 +1,263 @@
-<!--<view class="movie-list-wrapper">
-    <view class="blurs-img">
-      <view style="">
-        <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="blurs"></image>
-      </view>
-    </view>
-    <view class="movie-list-inner">
-      <scroll-view id="iSlider-wrapper" class="scroll-view_H" scroll-x="true" style="width: 100%" scroll-left="{{scroll_left}}" scroll-into-view="{{toView}}" bindscroll="scroll">
-      
-        <view  class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{animationData}}">
-            <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="scroll-view-item_H" ></image>
-          </view>
-          <view  class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{animationData}}">
-            <image src="http://static.wepiao.com/movie/2016/9/20_0/201609201030303352.jpg" class="scroll-view-item_H" ></image>
-          </view>
-        <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
-          <view id="green{{index}}" class="scroll-view-item_view" bindtap="tapMovieItem" animation="{{index == 0 ? animationData1 : animationData}}">
-            <image src="{{item.movie_poster_mini}}" class="scroll-view-item_H" data-type="{{index}}"></image>
-          </view>
-   
-        </block>
-      </scroll-view>
-    </view>
-</view>
-
-<view class="schedule-detail">
-  <view class="movie-info">
-    <view class="h3">樱桃小丸子：来自意大利的少年</view>
-    <view class="show-movie-detail" bindtap="navigateToMovieData">查看详情</view>
-  </view>
-  <view title="开场前15分钟停止在线售票" class="notice">
-    <icon class="iconfont icon-notice"></icon>
-    <text>温馨提示：开场前15分钟停止在线售票</text>
-  </view>
-  <view class="tab-scl">
-    <scroll-view class="tab-scl-items" style="width: 146px; transition-timing-function: cubic-bezier(0.1, 0.57, 0.1, 1); transition-duration: 0ms; transform: translate(0px, 0px) scale(1) translateZ(0px);">
-      <view date="20160928" class="tab-scl-list active">
-        <a href="javacript:void(0)">今天 9-28</a>
-      </view>
-      <view date="20160929" class="tab-scl-list">
-        <a href="javacript:void(0)">明天 9-29</a>
-      </view>
-    </scroll-view>
-  </view>
-  <view haspc="false" member_type="0" class="mod open-card-tips m-hide">
-    <icon class="icon-card"></icon>
-    <text id="cardTips">开通会员卡，买票更优惠</text>
-  </view>
-
-
-  <view showtimesiscroll="showtimesIScroll" showtime="20160928">
-    <scroll-view showtime="20160928" class="showtime-list">
-      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
-        <icon class="iconfont icon-morning"></icon>
-
-        <view class="scl-time">
-          <view class="scl-time-wrap">
-            <view class="time">10:00</view>
-            <view class="end-time">11:53 散场</view>
-          </view>
-        </view>
-
-        <view class="scl-info">
-          <text class="type">国语2D</text>
-          <view class="movie-hall">2号厅</view>
-        </view>
-
-        <view class="scl-price">
-          <view class="price">
-            <text>36</text>元
-          </view>
-          <view class="origin-price">60元</view>
-        </view>
-        <view class="scl-buy" bindtap="navigateToSeat">
-          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
-        </view>
-      </view>
-      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
-        <icon class="iconfont icon-morning"></icon>
-
-        <view class="scl-time">
-          <view class="scl-time-wrap">
-            <view class="time">10:00</view>
-            <view class="end-time">11:53 散场</view>
-          </view>
-        </view>
-
-        <view class="scl-info">
-          <text class="type">国语2D</text>
-          <view class="movie-hall">2号厅</view>
-        </view>
-
-        <view class="scl-price">
-          <view class="price">
-            <text>36</text>元
-          </view>
-          <view class="origin-price">60元</view>
-        </view>
-        <view class="scl-buy" bindtap="navigateToSeat">
-          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
-        </view>
-      </view>
-      <view schedule_id="" hall_id="" biscinemano="" isdis="false" class="_showtime ul">
-        <icon class="iconfont icon-morning"></icon>
-
-        <view class="scl-time">
-          <view class="scl-time-wrap">
-            <view class="time">10:00</view>
-            <view class="end-time">11:53 散场</view>
-          </view>
-        </view>
-
-        <view class="scl-info">
-          <text class="type">国语2D</text>
-          <view class="movie-hall">2号厅</view>
-        </view>
-
-        <view class="scl-price">
-          <view class="price">
-            <text>36</text>元
-          </view>
-          <view class="origin-price">60元</view>
-        </view>
-        <view class="scl-buy" bindtap="navigateToSeat">
-          <a href="javascript:void(0)" class="scl-btn">选座购票</a>
-        </view>
-      </view>
-    </scroll-view>
-  </view>
-</view>-->
-
-
-<!--wrap Begin-->
 <view class="wrap item-flexbox-v">
-  <view class="item-link item-cinema">
-    <view class="item-flexbox-v-c">
-      <view class="item-content">
-        <text class="name">北京新华国际影城（大兴店）</text>
-        <text class="address">黄村东大街火神庙商业广场王府井百货E座5层</text>
+  <view class="item-link cinemalist  ">
+      <view class="con-block">
+          <text class="name">北京万达影城</text>
+          <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
       </view>
-
-      <!--item-contentr end-->
-    </view>
-
-    <!--end-->
-    <view class="other">
-      <text class="item-label item-label-other">激光巨幕</text>
-      <text class="item-label item-label-other">ATMOS</text>
-      <text class="item-label">多优惠</text>
-    </view>
-
-    <!--other end-->
+  </view>  
+  <!--cinemalist end-->
+  <view class="item-link item-flexbox-v movie-scroll">
+      <scroll-view class="scroll-x" scroll-x="true">
+          <view class="scoll-mid">
+              <view class="img-box curr">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+               <view class="img-box">
+                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               </view>
+               <!--img-box end-->
+          </view>
+          <!--item-flexbox end-->
+      </scroll-view>
+      <!--scroll-view end-->
+      <text class="name">金刚：骷髅岛</text>
+      
   </view>
+  <!--movie-scroll end-->
+  <view class="item-link item-flexbox-v-c tag-cinema">
+          <text>温馨提示：开场前15分钟停止在线售票</text>
+  </view>
+  <!--tag-cinemaend-->
+  <view class="item-link time-scroll">
+        <scroll-view class="scroll-x" scroll-x="true">
+           <view class="scoll-mid">
+                <view class="item-times curr">
+                    <text>今天</text>
+                    <text>3-26号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>明天</text>
+                    <text>3-27号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>周二</text>
+                    <text>3-28号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>周三</text>
+                    <text>3-29号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>周四</text>
+                    <text>3-30号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>周五</text>
+                    <text>3-31号</text>
+                </view>
+                <!--item-time end-->
+                <view class="item-times">
+                    <text>周六</text>
+                    <text>4-01号</text>
+                </view>
+                <!--item-time end-->
 
-  <!--item-cinema end-->
-  <scroll-view class="scroll-x movieimglist" scroll-x="true">
-    <view class=" item-flexbox-v-e">
-      <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
-        <view id="green{{index}}" class="img-box item-flex-0 curr" bindtap="tapMovieItem" animation="{{index == 0 ? animationData1 : animationData}}">
-          <image src="{{item.movie_poster_mini}}" data-type="{{index}}"></image>
-        </view>
+           </view>
+           <!--scoll-mid end-->
+        </scroll-view>
+        <!--scroll-vie end-->
+  </view>
+  <!--scroll-view Begin-->
+  <scroll-view class="item-flex scroll-y cinemalist" scroll-y="true">
+      <view class="showlist">
+            <view class="item-link item-flexbox-v-c"  bindtap="selectseattap">
+                <view class="type">
 
-        <!--img-box end-->
-      </block>
-    </view>
+                </view>
+                <!--type end-->
+                <view class="time">
+                    <text class="start-time">14:15</text>
+                    <text class="end-time">15:30</text>
+                </view>
+                <!--time end-->
+                <view class="con-block info">
+                    <view class="ver">
+                          <text>英文版</text><text>3D</text>
+                    </view>
+                    <!--ver end-->
+                    <text class="half">3D厅</text>
+                     <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                </view>
+                <!--info end-->
+                <view class="buyticket">
+                          <text class="old-price">￥90</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+            </view>
+            <!--item-link end-->
+            <view class="item-link item-flexbox-v-c">
+                <view class="type">
 
-    <!--movieimglist end-->
+                </view>
+                <!--type end-->
+                <view class="time">
+                    <text class="start-time">14:15</text>
+                    <text class="end-time">15:30</text>
+                </view>
+                <!--time end-->
+                <view class="con-block info">
+                    <view class="ver">
+                          <text>英文版</text><text>3D</text>
+                    </view>
+                    <!--ver end-->
+                    <text class="half">3D厅</text>
+                     <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                </view>
+                <!--info end-->
+                <view class="buyticket">
+                          <text class="old-price">￥90</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+            </view>
+            <!--item-link end-->
+            <view class="item-link item-flexbox-v-c">
+                <view class="type">
+
+                </view>
+                <!--type end-->
+                <view class="time">
+                    <text class="start-time">14:15</text>
+                    <text class="end-time">15:30</text>
+                </view>
+                <!--time end-->
+                <view class="con-block info">
+                    <view class="ver">
+                          <text>英文版</text><text>3D</text>
+                    </view>
+                    <!--ver end-->
+                    <text class="half">3D厅</text>
+                     <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                </view>
+                <!--info end-->
+                <view class="buyticket">
+                          <text class="old-price">￥90</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+            </view>
+            <!--item-link end-->
+            <view class="item-link item-flexbox-v-c">
+                <view class="type">
+
+                </view>
+                <!--type end-->
+                <view class="time">
+                    <text class="start-time">14:15</text>
+                    <text class="end-time">15:30</text>
+                </view>
+                <!--time end-->
+                <view class="con-block info">
+                    <view class="ver">
+                          <text>英文版</text><text>3D</text>
+                    </view>
+                    <!--ver end-->
+                    <text class="half">3D厅</text>
+                     <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                </view>
+                <!--info end-->
+                <view class="buyticket">
+                          <text class="old-price">￥90</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+            </view>
+            <!--item-link end-->
+            <view class="item-link item-flexbox-v-c">
+                <view class="type">
+
+                </view>
+                <!--type end-->
+                <view class="time">
+                    <text class="start-time">14:15</text>
+                    <text class="end-time">15:30</text>
+                </view>
+                <!--time end-->
+                <view class="con-block info">
+                    <view class="ver">
+                          <text>英文版</text><text>3D</text>
+                    </view>
+                    <!--ver end-->
+                    <text class="half">3D厅</text>
+                     <view class="other">
+                          <text class="tag-tips">特惠减43.00元</text>
+                        </view>
+                        <!--other end-->
+                </view>
+                <!--info end-->
+                <view class="buyticket">
+                          <text class="old-price">￥90</text>
+                          <text class="price">￥44</text>
+                     </view>
+                     <!--buyticket end-->
+            </view>
+            <!--item-link end-->
+      </view>
+      <!--showlist end-->
   </scroll-view>
-
-  <!--scroll-view end-->
-  <view class="showtime">
-    <view class="showmovie">
-      <view class="item-flexbox-v-c movie-dt">
-        <text class="name">一条狗的使命</text>
-        <view>
-          <text>6.8</text>分
-        </view>
-      </view>
-
-      <!--movie-dt end-->
-      <view class="item-flexbox-v-c movie-dd">
-        <text class="ohtertxt">剧情 | 剧情 | 冒险 | 116分钟 | 动作 | 丹妮斯 | 丹妮斯 | 丹妮斯 </text>
-      </view>
-
-      <!--movie-dd end-->
-    </view>
-
-    <!--showmovie end-->
-    <view class="item-flexbox-v-c cinematips">
-      <text>温馨提示：开场前15分钟停止在线售票</text>
-    </view>
-
-    <!--cinematips end-->
-    <scroll-view class="item-time  scroll-x" scroll-x="true">
-      <view class="item-flexbox item-timebox">
-        <text class="time curr">今天 03-11</text>
-        <text class="time">明天 03-12</text>
-        <text class="time">后天 03-13</text>
-      </view>
-    </scroll-view>
-
-    <!--item-time end-->
-    <scroll-view class="item-flex scroll-y" scroll-y="ture">
-      <navigator url="/pages/select_seat/select_seat" class="item-link item-schedule">
-        <view class="schedule item-flexbox-v-c">
-          <view class="item-bar">
-            <text class="start-time">18:30</text>
-            <text class="end-time">20:30结束</text>
-          </view>
-
-          <!--item-bar end-->
-          <view class="item-content">
-            <text class="language">英语</text>
-            <text class="theater">11号60帧激光厅</text>
-          </view>
-
-          <!--item-content end-->
-          <view class="item-tool">
-            <text class="oldprice">¥33.9</text>
-            <text class="newprice">¥31.6</text>
-          </view>
-
-          <!--item-tool end-->
-          <view class="item-tool">
-            <text class="item-label">选座购票</text>
-          </view>
-
-          <!--item-tool end-->
-        </view>
-
-        <!--schedule end-->
-      </navigator>
-      <navigator url="/pages/select_seat/select_seat" class="item-link item-schedule">
-        <view class="schedule item-flexbox-v-c">
-          <view class="item-bar">
-            <text class="start-time">18:30</text>
-            <text class="end-time">20:30结束</text>
-          </view>
-
-          <!--item-bar end-->
-          <view class="item-content">
-            <text class="language">英语</text>
-            <text class="theater">11号60帧激光厅</text>
-          </view>
-
-          <!--item-content end-->
-          <view class="item-tool">
-            <text class="oldprice">¥33.9</text>
-            <text class="newprice">¥31.6</text>
-          </view>
-
-          <!--item-tool end-->
-          <view class="item-tool">
-            <text class="item-label">选座购票</text>
-          </view>
-
-          <!--item-tool end-->
-        </view>
-
-        <!--schedule end-->
-      </navigator>
-    </scroll-view>
-  </view>
-
-  <!--showtime end-->
+  <!--scroll-view End-->
 </view>
 
 <!--wrap end-->
+

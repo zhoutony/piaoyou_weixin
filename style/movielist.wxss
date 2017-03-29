@@ -1,91 +1,26 @@
-.movielist .movie-dt .name, .movielist .movie-dt .ver {
-  display: block;
+.movielist .bar-block {
+  padding-right: 20rpx;
 }
 
-.movielist .movie-dt .name {
-  font-size: 32rpx;
-  font-weight: bold;
+.movielist .img-box {
+  width: 130rpx;
+  height: 173rpx;
 }
 
-.movielist .movie-dt .ver {
-  color: white;
-  background: #4DB3AE;
-  margin-left: 15rpx;
-  font-size: 20rpx;
-  padding: 5rpx 8rpx;
-  -webkit-border-radius: 3rpx;
-  border-radius: 3rpx;
-}
-
-.movielist .movie-dd .review, .movielist .movie-dd .time,
-.movielist .movie-dd .viewtime {
-  display: block;
-}
-
-.movielist .movie-dd .review {
-  color: #666;
-  padding: 20rpx 0 0;
-  font-size: 26rpx;
-}
-
-.movielist .movie-dd .time, .movielist .movie-dd .viewtime {
-  font-size: 24rpx;
-  color: #898989;
-  padding-top: 18rpx;
-}
-
-.movielist .item-tool {
-  text-align: right;
-}
-
-.movielist .score, .movielist .score text {
-  font-size: 32rpx;
-  color: #f25c5c;
-}
-
-.movielist .score {
-  font-size: 24rpx;
-}
-
-.item-swiper {
-  height: 160rpx;
-}
-
-.item-swiper .img-box {
-  background: #f2f2f2;
-  width: 100%;
-}
-
-.menu {
-  height: 88rpx;
-  position: relative;
-}
-
-.menu .menu-city {
-  position: absolute;
-  line-height: 88rpx;
-  left: 20rpx;
-}
-
-.menu .menu-city text {
-  display: block;
-  font-size: 24rpx;
-  color: #999;
-}
-
-.ico-up {
-  margin-top: -2rpx;
-  margin-left: 10rpx;
-  width: 8rpx;
-  height: 8rpx;
-  border-left: 1rpx solid #888;
-  border-top: 1rpx solid #888;
-  transform: rotate(-135deg);
-}
-
-.menu .name {
-  color: #00968e;
+.movielist .main-info .name {
   font-size: 28rpx;
-  line-height: 88rpx;
-  text-align: center;
+}
+
+.movielist .main-info  .review, .movielist .other-info text {
+  display: block;
+  font-size: 22rpx;
+  padding: 10rpx 0 0;
+}
+
+.movielist .main-info  .review {
+  padding: 18rpx 0 0;
+}
+
+.movielist .other-info text {
+  padding-top: 10rpx;
 }

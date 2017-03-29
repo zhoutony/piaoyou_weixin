@@ -1,0 +1,36 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content">
+      <view class="mask-header">
+          <text class="tips"></text>
+          <view class="logo"></view>
+          <text class="title">手机号绑定</text>
+      </view>
+      <!--mask-header end-->
+      <view class="mask-con">
+          <view class="formlist">
+               <view class="form-box item-flexbox-v-c">
+                      <input type="number" class="item-flex" placeholder="请输入手机号" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="clear" size="20"  /></button>
+                </view>
+                <!--form-box end-->
+                <view class="form-box item-flexbox-v-c form-error">
+                      <input type="number" class="item-flex" value="请填写此项信息" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="warn" size="20"  /></button>
+                </view>
+                <!--form-box end-->
+                <view class="form-btns">
+                  <button type="primary" >下一步</button>
+                </view>
+                <!--form-btns end-->
+          </view>
+          <!--formlist end-->
+      </view>
+      <!--mask-con end-->
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->

@@ -1,0 +1,52 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content">
+      <view class="mask-header">
+          <text class="tips">该和机号未注册，请注册</text>
+          <view class="logo"></view>
+          <text class="title">电影票友注册</text>
+      </view>
+      <!--mask-header end-->
+      <view class="mask-con">
+          <view class="formlist">
+               <view class="form-box item-flexbox-v-c">
+                      <input type="number" class="item-flex" placeholder="手机号" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="clear" size="20"  /></button>
+                </view>
+                <view class="pushcode item-flexbox-v-c">
+                    <view class="form-box item-flex ">
+                      <input type="number" class="item-flex" placeholder="验证码" />
+                    </view>
+                    <!--form-box end-->
+                      <button size="mini" class="btn-code" type="primary">发送验证码</button>
+                </view>
+                <!---pushcode end-->
+                <view class="pushcode item-flexbox-v-c">
+                    <view class="form-box item-flex ">
+                      <input type="number" class="item-flex" placeholder="验证码" />
+                    </view>
+                    <!--form-box end-->
+                      <button size="mini" class="btn-code" type="primary" disabled="true">重新发送(60)</button>
+                </view>
+                <!---pushcode end-->
+                <view class="form-box item-flexbox-v-c">
+                      <input type="text" class="item-flex" placeholder="密码 0-20位" password="true" />
+                      <button size="mini" class="btn-icon" type="default"><icon type="clear" size="20"  /></button>
+                </view>
+                <!--form-box end-->
+                <text class="error-text">信息不完全</text>
+                <view class="form-btns">
+                  <button type="primary" >注册并绑定</button>
+                </view>
+                <!--form-btns end-->
+          </view>
+          <!--formlist end-->
+      </view>
+      <!--mask-con end-->
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->

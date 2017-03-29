@@ -81,10 +81,12 @@ Page({
             toView: 'green'+this.i
         })
     },
-    navigateToSeat: function () {
+    selectseattap: function (e) {
+        let data = e.currentTarget.dataset;
         wx.navigateTo({ url: '../select_seat/select_seat' })
     },
     navigateToMovieData: function(){
         wx.navigateTo({url: '../movie_detail/movie_detail' })
     }
+     
 })

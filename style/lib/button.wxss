@@ -1,0 +1,52 @@
+button[plain]{
+    color:#00968e;
+    border-color:#00968e;
+    padding:6rpx 18rpx;
+    line-height:1;
+    font-size:20rpx;
+}
+
+button[type="primary"]{
+    background:#00968e;
+    -webkit-border-radius:100rpx;
+    border-radius:100rpx;
+    
+}
+.button-hover,
+button[type="primary"]:hover,
+button[type="primary"]:active{
+    background:#017973;
+}
+button[disabled][type="primary"]{
+    background:#d2d2d2;
+    border:none;
+}
+button[disabled][type="primary"]:after{
+    display:none;
+}
+button[size="mini"]{
+    font-size:24rpx;
+}
+
+button.btn-icon{
+    border:none;
+    background:none;
+    padding:0 30rpx;
+    
+}
+button.btn-icon:after{
+    display:none;
+}
+button.btn-icon icon{
+    vertical-align: middle;
+}
+
+button.btn-link{
+    border:none;
+    background:none;
+    color:#00968e;
+    padding:0;
+}
+button.btn-link:after{
+    display:none;
+}

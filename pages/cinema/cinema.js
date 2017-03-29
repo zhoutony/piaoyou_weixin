@@ -55,5 +55,13 @@ Page({
     scheduletap(e) {
         let data = e.currentTarget.dataset;
         wx.navigateTo({ url: '../schedule/schedule?movieno=' + data.movieno + '&cinemano=' + data.cinemano })
-    }
+    },
+     movietap(e) {
+        let data = e.currentTarget.dataset;
+        wx.navigateTo({url: '../movie/movie?movieno=' + data.movieno})
+    },
+    citytap(e){
+       let data = e.currentTarget.dataset;
+       wx.navigateTo({ url: '../city/city' });
+   }
 });
