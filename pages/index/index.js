@@ -22,6 +22,7 @@ Page({
                     // cinema: data.cinema_info.data,
                     movies: data
                 })
+            that.getLocationMethod();
         });
     },
     onLoad(e) {
@@ -37,63 +38,54 @@ Page({
         var cinemano = app.getCinemano();  // 1000088
         app.getUserInfo(function(userInfo){
             console.log(userInfo)
-            /*
-        avatarUrl:"http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eorwiaJcRPxKMJ77lMqwpy8ib97kTOpMbVXNKy6lJLIIb6hTDR6HrrvUib45U74RwHLEtKq8u90dKcKg/0"
-        city:"Changping"
-        country:"CN"
-        gender:1
-        language:"zh_CN"
-        nickName:"袁海雄"
-        openid:"oRkEY0c2p-NfsEJA8o47oQdKSe14"
-        province:"Beijing"
-        session_key:"91VckOv82xYa7E/7nTclOw=="
-            */
         });
 
+        
+        
+    },
+    onShow: function(e){
         try {
           var city = wx.getStorageSync('city')
           if (city) {
               // Do something with return value
-              if(city.locationID != this.data.city.locationID){
-                this.getLocationMethod();
-              }
+              this.setData({
+                  city: city
+              })
           }
         } catch (e) {
           // Do something when catch error
         }
-
-
-        this.loadData(_e);
-        
-    },
-    onShow(e){
-        
+        this.loadData(e);
     },
     getLocationMethod: function(){
         var that = this;
-        utils.getLocationMethod(function(res){
-            console.log('城市定位：',res);
-            let citys = res[0];
-            wx.showModal({
-              title: '提示',
-              content: '定位城市是' + citys.nameCN + ',是否要切换',
-              success: function(res) {
-                if (res.confirm) {
-                  // console.log('用户点击确定')
-                  that.setData({
-                      city: citys
-                  })
-                  wx.setStorage({
-                        key:"city",
-                        data:citys
-                  })
-                  that.loadData()
-                } else if (res.cancel) {
-                    console.log('用户点击取消')
+        if(!app.isGetLocation){
+            app.isGetLocation = true;
+            utils.getLocationMethod(function(res){
+                console.log('城市定位：',res);
+                let citys = res[0];
+                if(that.data.city.locationID != citys.locationID){
+                    wx.showModal({
+                    title: '提示',
+                    content: '定位城市是' + citys.nameCN + ',是否要切换',
+                    success: function(res) {
+                        if (res.confirm) {
+                                that.setData({
+                                    city: citys
+                                })
+                                wx.setStorage({
+                                        key:"city",
+                                        data:citys
+                                })
+                                that.loadData();
+                            } else if (res.cancel) {
+                                console.log('用户点击取消')
+                            }
+                        }
+                    })
                 }
-              }
             })
-        })
+        }
     },
     scheduletap(e) {
         let data = e.currentTarget.dataset;

@@ -65,5 +65,6 @@ App({
   },
   globalData: {
     userInfo: null
-  }
+  },
+  isGetLocation: false
 })
