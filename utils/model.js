@@ -2,7 +2,7 @@
  * Created by vincentyan on 2016/9/28.
  */
 // var base = "https://smart.wepiao.com/apiProxy";
-var base = "http://weiticket.com:8088";
+var base = "https://moviefan.com.cn/miniprogramapi";
 module.exports = {
     isOk: function (res) {
         return res.errMsg == "request:ok";
@@ -52,7 +52,7 @@ module.exports = {
                 if (that.isOk(res)) {
                     var data = res.data;
                     var msg = that.getMsg(res);
-                    console.clear();
+                    // console.clear();
                     if (success)success(data, msg);
                 }
                 else {

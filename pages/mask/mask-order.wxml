@@ -1,0 +1,114 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content item-flexbox-v">
+      <view class="mask-header" style="border:none;">
+          <text class="order-tab">电影订单</text>
+      </view>
+      <!--mask-header end-->
+       
+            <scroll-view class="mask-con item-flex scroll-y" scroll-y="true">
+                <view class="item-orderbox">
+                      <text class="number">订单号：24372</text>
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="half">北京金逸朝阳大悦城影院4号厅</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="time">2017-03-20 20:13:01</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="txtseat">10排10座，10排10座，10排10座，10排10座</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="price">总价：90元</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="code">
+                          <text>序列号：734812</text>
+                          <text>验证码：734812</text>
+                      </view>
+                      <!--code end-->
+                      <text class="ticket-tips">请到微信取票机或影院前台兑换</text>
+                </view>
+                <!--item-order end-->
+                <view class="item-orderbox disabledorder">
+                      <text class="number">订单号：24372</text>
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="half">北京金逸朝阳大悦城影院4号厅</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="time">2017-03-20 20:13:01</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="txtseat">10排10座，10排10座，10排10座，10排10座</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="price">总价：90元</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="code">
+                          <text>序列号：734812</text>
+                          <text>验证码：734812</text>
+                      </view>
+                      <!--code end-->
+                      <text class="ticket-tips">请到微信取票机或影院前台兑换</text>
+                </view>
+                <!--item-order end-->
+                <view class="item-orderbox">
+                      <text class="number">订单号：24372</text>
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="half">北京金逸朝阳大悦城影院4号厅</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="time">2017-03-20 20:13:01</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="item-flexbox">
+                        <view class="con-block">
+                              <text class="txtseat">10排10座，10排10座，10排10座，10排10座</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                            <text class="price">总价：90元</text>
+                          </view>
+                          <!--bar-block-->
+                      </view>
+                      <!--item-flexbox end-->
+                      <view class="code">
+                          <text>序列号：734812</text>
+                          <text>验证码：734812</text>
+                      </view>
+                      <!--code end-->
+                      <text class="ticket-tips">请到微信取票机或影院前台兑换</text>
+                </view>
+                <!--item-order end-->
+            </scroll-view>
+       
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->

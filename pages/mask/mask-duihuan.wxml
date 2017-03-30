@@ -1,0 +1,85 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content item-flexbox-v">
+      <view class="mask-header" style="border:none;">
+          <text class="order-tab">兑换券</text>
+           <button type="primary" size="mini" class="btn-link">+ 添加新码</button>
+      </view>
+      <!--mask-header end-->
+      <view class="menu-tab item-flexbox-v-c">
+          <view class="item-flex curr">未使用(1)</view>
+          <view class="item-flex">已过期(1)</view>
+          <view class="item-flex">已使用(5)</view>
+      </view>
+      <!--menu-tab end--> 
+      <scroll-view class="mask-con item-flex scroll-y" scroll-y="true">
+           <view class="red-bag">
+                <view class="red-box">
+                    <view class="main-box item-flexbox">
+                        <view class="con-block">
+                            <text>兑换券</text>
+                            <text>类型：2D兑换券</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                              <text>任意影片电影票在线选座兑换券</text>
+                              <text>全国影院</text>
+                              <text>限45.00元以内场次</text>
+                        </view>
+                        <!--bar-block end-->
+                        <view class="tips">券</view>
+                    </view>
+                    <!--main-box end-->
+                    <view class="other-box item-flexbox-v-c">
+                      <view class="con-block">
+                            <text>只能在本平台使用</text>
+                      </view>
+                      <!--con-block end-->
+                      <view class="bar-block">
+                          <text>2013-08-03 到期</text>
+                      </view>
+                      <!--bar-blcok end-->
+                    </view>   
+                    <!--other-box end-->
+                </view>
+                <!--red-box end-->
+                <view class="red-box red-disabled">
+                    <view class="main-box item-flexbox">
+                        <view class="con-block">
+                            <text>兑换券</text>
+                            <text>类型：2D兑换券</text>
+                        </view>
+                        <!--con-block end-->
+                        <view class="bar-block">
+                              <text>任意影片电影票在线选座兑换券</text>
+                              <text>全国影院</text>
+                              <text>限45.00元以内场次</text>
+                        </view>
+                        <!--bar-block end-->
+                    </view>
+                    <!--main-box end-->
+                    <view class="other-box item-flexbox-v-c">
+                      <view class="con-block">
+                            <text>只能在本平台使用</text>
+                      </view>
+                      <!--con-block end-->
+                      <view class="bar-block">
+                          <text>2013-08-03 到期</text>
+                      </view>
+                      <!--bar-blcok end-->
+                    </view>   
+                    <!--other-box end-->
+                </view>
+                <!--red-box end-->
+                
+          </view>
+           <!--red-bag-->
+       </scroll-view>
+       <!--scroll-view end-->
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->

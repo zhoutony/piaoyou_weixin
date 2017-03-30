@@ -1,2 +1,103 @@
 <!--index.wxml-->
-<include src="/pages/ctrl/mine.wxml" />
+<!--<include src="/pages/ctrl/mine.wxml" />-->
+<!--wrap Begin-->
+<view class="wrap item-flexbox-v">
+   <scroll-view class="item-flex scroll-y" scroll-y="true">
+   <view class="item-link movie-title">
+        <view class ="con-block">
+            <text class="name">金刚：骷髅岛</text>
+            <text class="cinema-name">北京万达影城</text>
+            <text class="type">3D,中国巨幕3D ｜ 5号厅 ｜ 2017-03-22 11:30</text>
+        </view>
+        <!--con-block end-->
+        <view class="bar-block">
+          <button type="primary" size="mini">重新选座</button>
+        </view>
+        <!--bar-block end-->
+   </view>
+   <!--item-link end-->
+   <view class="oderlist ">
+      <view class="item-order">
+          <view class="con-block">
+              <text class="tag-seats">11排12座</text>
+          </view>
+          <!--con-block end-->
+          <view class="bar-block">
+              <text class="price">￥90.01</text>
+          </view>
+          <!--bar-block end-->
+      </view>
+      <!--item-order end-->
+      <view class="item-order">
+          <view class="con-block">
+              <text class="label">红包</text>
+          </view>
+          <!--con-block end-->
+          <view class="bar-block">
+              <text class="select">无可用</text>
+          </view>
+          <!--bar-block end-->
+      </view>
+      <!--item-order end-->
+      <view class="item-order">
+          <view class="con-block">
+              <text class="label">票有卡</text>
+          </view>
+          <!--con-block end-->
+          <view class="bar-block">
+              <text class="select">1张 点击使用</text>
+          </view>
+          <!--bar-block end-->
+      </view>
+      <!--item-order end-->
+      <view class="item-order">
+          <view class="con-block">
+              <text class="label">兑换码</text>
+          </view>
+          <!--con-block end-->
+          <view class="bar-block">
+              <text class="select">无可用</text>
+          </view>
+          <!--bar-block end-->
+      </view>
+      <!--item-order end-->
+      <view class="item-order">
+          <view class="con-block">
+              <text class="label">手机号</text>
+              <text class="tel">13811984938</text>
+          </view>
+          <!--con-block end-->
+          
+      </view>
+      <!--item-order end-->
+      <view class="item-order">
+          <view class="con-block">
+              <text class="label">还需支付</text>
+          </view>
+          <!--con-block end-->
+          <view class="bar-block">
+              <text class="select-price">￥90.01</text>
+          </view>
+          <!--bar-block end-->
+      </view>
+      <!--item-order end-->
+   </view>
+   <!--order list end-->
+   <view class="order-type">
+        <text>不支持退款</text>
+        <text>不支持更换场次</text>
+   </view>
+   <!--order-type end-->
+   <view class="order-button">
+      <button type="primary">微信支付</button>
+      <button type="primary">联通话费支付</button>
+   </view>
+   <!--order-button end-->
+   <view class="order-time">
+    <text class="label">支付剩余时间</text>
+    <text class="time">13分45秒</text>
+   </view>
+   <!--order-time end-->
+   </scroll-view>
+</view>
+<!--wrap end-->

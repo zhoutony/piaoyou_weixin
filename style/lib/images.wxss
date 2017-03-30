@@ -1,7 +1,46 @@
-.img-box{
-    background:#888;
+.img-box {
+  background: #888;
 }
-.img-box image{
-    width:100%;
-    height:100%;
+
+.img-box image {
+  width: 100%;
+  height: 100%;
+}
+
+.ellipsis, .ellipsis-1, .ellipsis-2, .ellipsis-3 {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+
+.ellipsis-1 {
+  -webkit-line-clamp: 1;
+}
+
+.ellipsis-2 {
+  -webkit-line-clamp: 2;
+}
+
+.ellipsis-3 {
+  -webkit-line-clamp: 3;
+}
+
+.buyticket {
+  text-align: right;
+}
+
+.buyticket .price {
+  padding: 5rpx 0 0;
+  font-size: 28rpx;
+  display: block;
+  position: relative;
+  color: #f29600;
+}
+
+.buyticket .price:after {
+  content: '起';
+  color: #ccc;
+  font-size: 20rpx;
+  padding-left: 5rpx;
 }

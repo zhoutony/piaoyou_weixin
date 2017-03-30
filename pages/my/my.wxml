@@ -1,0 +1,57 @@
+<!--wrap Begin-->
+<view class="wrap item-flexbox-v">
+   <view class="item-flexbox-vh-c item-flexbox-v my-header">
+           <view class="img-box member-avatar">
+            <image class="member-avatar-image" src="{{userInfo.avatarUrl}}" /> 
+           </view>
+           <!--img-box end--> 
+           <text class="name">{{userInfo.nickName}}</text>
+           <view class="other">
+                <button type="primary" size="mini">+</button>
+                <text class="tel">绑定手机号</text>
+           </view>
+           <!--other end-->
+   </view>
+   <!--my-header-->
+   <view class="menu item-flexbox">
+        <view class="item-flex">我的足迹</view>
+        <view class="item-flex curr">我的中心</view>
+   </view>
+   <!--menu end-->
+   <view class="tool">
+        <view class="item-box curr">
+            <view class="icon"></view>
+            <text>订单</text>
+        </view>
+        <!--item-box end-->
+        <view class="item-box">
+            <view class="icon"></view>
+            <text>卡包</text>
+        </view>
+        <!--item-box end-->
+        <view class="item-box">
+            <view class="icon"></view>
+            <text>红包</text>
+        </view>
+        <!--item-box end-->
+        <view class="item-box">
+            <view class="icon"></view>
+            <text>兑换码</text>
+        </view>
+        <!--item-box end-->
+        <view class="item-box">
+            <view class="icon"></view>
+            <text>活动</text>
+        </view>
+        <!--item-box end-->
+        <view class="item-box">
+            <view class="icon"></view>
+            <text>设置</text>
+        </view>
+        <!--item-box end-->
+   </view>
+   <!--tool end-->
+</view>
+<!--wrap end-->
+
+ 

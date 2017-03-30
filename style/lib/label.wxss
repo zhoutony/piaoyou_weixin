@@ -1,19 +1,43 @@
-/**cinema label**/
-.item-label{
-    display:inline-block;
-    vertical-align: middle;
-    border:1rpx solid #ff686b;
-    color:#ff686b;
-    height:44rpx;
-    line-height:44rpx;
+.tag-ver{
+    color:white;
+    background:#00968e;
+    font-size:18rpx;
     -webkit-border-radius:6rpx;
     border-radius:6rpx;
-    padding:0 15rpx;
-    font-size:24rpx;
-    margin-right:10rpx;
+    padding:6rpx 10rpx;
+    margin-left:20rpx;
 }
-.item-label-other{
-    border:1rpx solid #abb8d5;
-    color:#abb8d5;
+.tag-tips{
+    color:white;
+    background:#f29700;
+    font-size:20rpx;
+    -webkit-border-radius:100rpx;
+    border-radius:100rpx;
+    display:inline-block;
+    padding:5rpx 10rpx;
+
 }
-/**cinema label**/
+.tag-seat{
+    display:inline-block;
+    background:#00968e;
+    color:white;
+    -webkit-border-radius:0.6rpx;
+    border-radius:0.6rpx;
+    width:28rpx;
+    height:28rpx;
+    line-height:28rpx;
+    text-align:center;
+    font-size:20rpx;
+}
+.tag-cinema{
+    background:#fcf8e8;
+    height:68rpx;
+    min-height:68rpx;
+    color:#ed8e1e;
+    padding:0 30rpx;
+   
+   
+}
+.tag-cinema text{
+ font-size:24rpx;
+}

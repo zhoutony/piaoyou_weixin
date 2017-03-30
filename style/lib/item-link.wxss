@@ -1,0 +1,21 @@
+.item-link {
+  background: white;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  min-height: 88rpx;
+  padding: 30rpx 20rpx;
+  position: relative;
+}
+
+.item-link:after {
+  content: '';
+  display: block;
+  height: 0;
+  background: #e5e5e5;
+  overflow: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-bottom: 1rpx solid #e5e5e5;
+}

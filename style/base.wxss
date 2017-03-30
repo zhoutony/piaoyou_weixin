@@ -1,13 +1,21 @@
-@import 'lib/flexbox.wxss';
-@import 'lib/images.wxss';
-@import 'lib/btn.wxss';
-@import 'lib/item.wxss';
-@import 'lib/label.wxss';
-@import 'lib/search.wxss';
-@import 'lib/city.wxss';
-@import 'lib/mask.wxss';
+@import "lib/flexbox.wxss";
+@import "lib/item-link.wxss";
+@import "lib/images.wxss";
+@import "lib/label.wxss";
+@import "lib/menu.wxss";
+@import "lib/button.wxss";
+@import "lib/swiper.wxss";
+@import "lib/scrollview.wxss";
+@import "lib/mask.wxss";
+@import "lib/selectseat.wxss";  /** 影院排期 **/
 
 
-@import 'cinema.wxss';
-@import 'movielist.wxss';
- 
+
+
+
+@import "movielist.wxss";   /** 影片列表 **/
+@import "cinema.wxss";      /** 影院列表 **/
+@import "schedule.wxss";   /** 影院排期 **/
+@import "order.wxss";       /** 影院排期 **/
+@import "my.wxss";          /** 影院排期 **/
+@import "city.wxss";          /** 影院排期 **/

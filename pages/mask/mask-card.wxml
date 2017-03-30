@@ -1,0 +1,148 @@
+<view class="item-mask">
+  <view class="mask-close">
+    <text class="close">2</text>
+  </view>
+  <!--mask-close end-->
+  <view class="mask-content item-flexbox-v">
+      <view class="mask-header" style="border:none;">
+          <text class="order-tab">电影卡</text>
+          <button type="primary" size="mini" class="btn-link">+ 添加新卡</button>
+      </view>
+      <!--mask-header end-->
+      <scroll-view class="mask-con item-flex scroll-y" scroll-y="true">
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->   
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->  
+        <view class="item-card">
+            <view class="price">
+                <text>金额：</text>
+                <text class="txt">￥0.01</text>
+            </view>
+            <!--price end-->
+            <view class="other">
+                <text class="txt">票友卡：￥0.01</text>
+                <text class="txt">有效期：2016/10/27 13:23:01至2019/10/17 20:33:22</text>
+            </view>
+            <!--other end-->
+        </view>
+        <!--item-car end-->        
+      </scroll-view>
+      <!--scroll-view end--> 
+  </view>
+  <!--mask-content end-->
+</view>
+<!--item-mask end-->
