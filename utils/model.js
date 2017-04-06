@@ -42,12 +42,15 @@ module.exports = {
     post: function (url, data, success, fail, complete) {
         var that = this,
             url = base + url,
-            method = "post";
+            method = "POST";
 
         var param = {
             url: url,
             method: method,
             data: data,
+            header: {
+                'content-type': 'application/json'
+            },
             success: function (res) {
                 if (that.isOk(res)) {
                     var data = res.data;

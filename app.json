@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/orders/orders",
+    "pages/payment/payment",
     "pages/my/my",
     "pages/choose_cinema/choose_cinema",
     "pages/schedule/schedule",
@@ -13,9 +13,9 @@
   ],
   "window": {
     "backgroundTextStyle": "light",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#00948d",
     "navigationBarTitleText": "电影票友",
-    "navigationBarTextStyle": "black"
+    "navigationBarTextStyle": "white"
   },
   "tabBar": {
     "color": "#dddddd",

@@ -21,7 +21,7 @@
   <!--item-swiper end-->
   <scroll-view class="item-flex scroll-y movielist" scroll-y="true">
     <block wx:for-items="{{movies}}" wx:key="{{index}}">
-      <view class="item-link" bindtap="scheduletap">
+      <view class="item-link" data-movieno="{{item.movieno}}" bindtap="scheduletap">
         <view class="bar-block">
           <view class="img-box">
             <image src="{{item.movie_poster_mini}}" />

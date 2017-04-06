@@ -23,7 +23,9 @@ Page({
                     movies: data
                 })
             that.getLocationMethod();
+            wx.hideNavigationBarLoading();
         });
+        wx.showNavigationBarLoading();
     },
     onLoad(e) {
         // console.log('onLoad:', e);
@@ -88,8 +90,19 @@ Page({
         }
     },
     scheduletap(e) {
-        let data = e.currentTarget.dataset;
-        wx.navigateTo({ url: '../cinema/cinema?movieno=' + data.movieno })
+        let data = e.currentTarget.dataset,
+            longitude = '', latitude = '';
+        wx.setStorage({key: "cityid",data: this.data.city.locationID});
+        try {
+            let location = wx.getStorageSync('location');
+            if (location) {
+                longitude = location.longitude;
+                latitude = location.latitude;
+            }
+        } catch (e) {
+          // Do something when catch error
+        }
+        wx.navigateTo({ url: '../cinema/cinema?movieID=' + data.movieno + '&locationID=' + this.data.city.locationID + '&latitude=' + latitude + '&longitude=' + longitude })
     },
    citytap(e){
        let data = e.currentTarget.dataset;
