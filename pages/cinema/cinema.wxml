@@ -2,21 +2,21 @@
    <view class="movielist item-link">
         <view class="bar-block">
             <view class="img-box">
-               <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+               <image src="{{movie.movie_still}}" />
             </view>
         </view>
         <!--bar-block end-->
-        <view class="con-block" bindtap = "movietap">
+        <view class="con-block">
               <view class="main-info">
-                <text class="name">金刚：骷髅岛</text>
+                <text class="name">{{movie.name}}</text>
               </view>
               <!--main-info end-->
               <view class="other-info">
-                <text class="director">导演：乔丹·沃格特-罗伯茨</text>
-                <text class="actor">演员：汤姆·希德勒斯顿 / 布丽·拉尔森 / 塞缪尔·杰克逊 / 约翰·古德曼 / 景甜</text>
-                <text class="type">类型：动作 / 爱情 / 冒险</text>
-                <text class="date">日期：2017-03-24上映</text>
-                <text class="time">时长：119分钟</text>
+                <text wx:if="{{movie.director}}" class="director">导演：{{movie.director}}</text>
+                <text wx:if="{{movie.actor}}" class="actor">演员：{{movie.actor}}</text>
+                <text wx:if="{{movie.version}}" class="type">类型：{{movie.version}}</text>
+                <text wx:if="{{movie.date}}" class="date">日期：{{movie.date}}上映</text>
+                <!--<text wx:if="{{movie.actor}}" class="time">时长：{{movie.actor}}分钟</text>-->
                 </view>
               <!--other-info end-->
         </view>
@@ -35,135 +35,35 @@
   <!--scroll-view Begin-->
   <scroll-view class="item-flex scroll-y" scroll-y="true">
      <view class="area">
-            <view class="area-dt">
+            <!--<view class="area-dt">
                 <text>海淀区</text>
-            </view>
+            </view>-->
             <!--area-dt end-->
+
             <view class="area-dd cinemalist">
-                <view class="item-link"  bindtap="scheduletap">
+              <block wx:for="{{cinemas}}" wx:key="index">
+                <view class="item-link" data-cinemano="{{item.cinemaID}}" bindtap="scheduletap">
                     <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
+                        <text class="name">{{item.cinemaName}}</text>
+                        <text class="address">{{item.cinemaAddress}}</text>
+                        <text wx:if="{{item.RecentShowtime}}" class="schedule">最近场次：{{item.RecentShowtime}}</text>
                         <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
+                          <text class="tag-tips">{{item.voucherNote}}</text>
                         </view>
                         <!--other end-->
                     </view>
                     <!--con-block end-->
                      <view class="buyticket">
                           <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
+                          <text class="old-price">￥{{item.retailPrice}}</text>
+                          <text class="price">￥{{item.limitPrice}}</text>
                      </view>
                      <!--buyticket end-->
                 </view>
                 <!--item-link end-->
-                <view class="item-link">
-                    <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
-                        <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                    </view>
-                    <!--con-block end-->
-                     <view class="buyticket">
-                          <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-                </view>
-                <!--item-link end-->
-                <view class="item-link"  bindtap="scheduletap">
-                    <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
-                        <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                    </view>
-                    <!--con-block end-->
-                     <view class="buyticket">
-                          <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-                </view>
-                <!--item-link end-->
+              </block>
             </view>
-            <!--area-dd end-->
-            <view class="area-dt">
-                <text>海淀区</text>
-            </view>
-            <!--area-dt end-->
-            <view class="area-dd cinemalist">
-                <view class="item-link">
-                    <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
-                        <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                    </view>
-                    <!--con-block end-->
-                     <view class="buyticket">
-                          <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-                </view>
-                <!--item-link end-->
-                <view class="item-link">
-                    <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
-                        <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                    </view>
-                    <!--con-block end-->
-                     <view class="buyticket">
-                          <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-                </view>
-                <!--item-link end-->
-                <view class="item-link">
-                    <view class="con-block">
-                        <text class="name">北京万达影城</text>
-                        <text class="address">海淀区四道口2号京果商厦B座三层北侧</text>
-                        <text class="schedule">最近场次：09:30 ｜ 10:00 ｜ 10:30 ｜ 12:00</text>
-                        <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                    </view>
-                    <!--con-block end-->
-                     <view class="buyticket">
-                          <text class="tag-seat">座</text>
-                          <text class="old-price">￥90.00</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-                </view>
-                <!--item-link end-->
-            </view>
-            <!--area-dd end-->
-     </view>
+            <!--area-dd end-->     </view>
      <!--area end-->
   </scroll-view>
   <!--scroll-view End-->

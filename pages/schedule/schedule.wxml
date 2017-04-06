@@ -61,45 +61,15 @@
           <text>温馨提示：开场前15分钟停止在线售票</text>
   </view>
   <!--tag-cinemaend-->
-  <view class="item-link time-scroll">
+  <view class="item-link time-scroll" style="height: 48px;">
         <scroll-view class="scroll-x" scroll-x="true">
            <view class="scoll-mid">
-                <view class="item-times curr">
-                    <text>今天</text>
-                    <text>3-26号</text>
+              <block wx:for="{{schedules}}" wx:key="index">
+                <view class="item-times {{index == 0 ? 'curr' : ''}}" data-index="{{index}}">
+                    <!--<text>今天</text>-->
+                    <text>{{item.Date}}</text>
                 </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>明天</text>
-                    <text>3-27号</text>
-                </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>周二</text>
-                    <text>3-28号</text>
-                </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>周三</text>
-                    <text>3-29号</text>
-                </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>周四</text>
-                    <text>3-30号</text>
-                </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>周五</text>
-                    <text>3-31号</text>
-                </view>
-                <!--item-time end-->
-                <view class="item-times">
-                    <text>周六</text>
-                    <text>4-01号</text>
-                </view>
-                <!--item-time end-->
-
+              </block>
            </view>
            <!--scoll-mid end-->
         </scroll-view>
@@ -107,153 +77,40 @@
   </view>
   <!--scroll-view Begin-->
   <scroll-view class="item-flex scroll-y cinemalist" scroll-y="true">
-      <view class="showlist">
-            <view class="item-link item-flexbox-v-c"  bindtap="selectseattap">
+    <block wx:for="{{schedules}}" wx:key="index">
+      <view class="showlist {{index == 0 ? '' : 'm-hide'}}">
+          <block wx:for="{{item.shows}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
+            <view class="item-link item-flexbox-v-c" data-scheduleno="{{_item.schedule_id}}" bindtap="selectseattap">
                 <view class="type">
 
                 </view>
                 <!--type end-->
                 <view class="time">
-                    <text class="start-time">14:15</text>
-                    <text class="end-time">15:30</text>
+                    <text class="start-time">{{_item.time}}</text>
+                    <text class="end-time">{{_itme.end_time}}</text>
                 </view>
                 <!--time end-->
                 <view class="con-block info">
                     <view class="ver">
-                          <text>英文版</text><text>3D</text>
+                          <text>{{_item.type}}</text><!--<text>3D</text>-->
                     </view>
                     <!--ver end-->
-                    <text class="half">3D厅</text>
+                    <text class="half">{{_item.roomname}}</text>
                      <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
+                          <text class="tag-tips">{{_item.activity_sche_msg}}</text>
                         </view>
                         <!--other end-->
                 </view>
                 <!--info end-->
                 <view class="buyticket">
-                          <text class="old-price">￥90</text>
-                          <text class="price">￥44</text>
+                          <text class="old-price">￥{{_item.cinemaprice / 100}}</text>
+                          <text class="price">￥{{_item.price / 100}}</text>
                      </view>
                      <!--buyticket end-->
             </view>
-            <!--item-link end-->
-            <view class="item-link item-flexbox-v-c">
-                <view class="type">
-
-                </view>
-                <!--type end-->
-                <view class="time">
-                    <text class="start-time">14:15</text>
-                    <text class="end-time">15:30</text>
-                </view>
-                <!--time end-->
-                <view class="con-block info">
-                    <view class="ver">
-                          <text>英文版</text><text>3D</text>
-                    </view>
-                    <!--ver end-->
-                    <text class="half">3D厅</text>
-                     <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                </view>
-                <!--info end-->
-                <view class="buyticket">
-                          <text class="old-price">￥90</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-            </view>
-            <!--item-link end-->
-            <view class="item-link item-flexbox-v-c">
-                <view class="type">
-
-                </view>
-                <!--type end-->
-                <view class="time">
-                    <text class="start-time">14:15</text>
-                    <text class="end-time">15:30</text>
-                </view>
-                <!--time end-->
-                <view class="con-block info">
-                    <view class="ver">
-                          <text>英文版</text><text>3D</text>
-                    </view>
-                    <!--ver end-->
-                    <text class="half">3D厅</text>
-                     <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                </view>
-                <!--info end-->
-                <view class="buyticket">
-                          <text class="old-price">￥90</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-            </view>
-            <!--item-link end-->
-            <view class="item-link item-flexbox-v-c">
-                <view class="type">
-
-                </view>
-                <!--type end-->
-                <view class="time">
-                    <text class="start-time">14:15</text>
-                    <text class="end-time">15:30</text>
-                </view>
-                <!--time end-->
-                <view class="con-block info">
-                    <view class="ver">
-                          <text>英文版</text><text>3D</text>
-                    </view>
-                    <!--ver end-->
-                    <text class="half">3D厅</text>
-                     <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                </view>
-                <!--info end-->
-                <view class="buyticket">
-                          <text class="old-price">￥90</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-            </view>
-            <!--item-link end-->
-            <view class="item-link item-flexbox-v-c">
-                <view class="type">
-
-                </view>
-                <!--type end-->
-                <view class="time">
-                    <text class="start-time">14:15</text>
-                    <text class="end-time">15:30</text>
-                </view>
-                <!--time end-->
-                <view class="con-block info">
-                    <view class="ver">
-                          <text>英文版</text><text>3D</text>
-                    </view>
-                    <!--ver end-->
-                    <text class="half">3D厅</text>
-                     <view class="other">
-                          <text class="tag-tips">特惠减43.00元</text>
-                        </view>
-                        <!--other end-->
-                </view>
-                <!--info end-->
-                <view class="buyticket">
-                          <text class="old-price">￥90</text>
-                          <text class="price">￥44</text>
-                     </view>
-                     <!--buyticket end-->
-            </view>
-            <!--item-link end-->
+          </block>  
       </view>
+    </block>
       <!--showlist end-->
   </scroll-view>
   <!--scroll-view End-->
