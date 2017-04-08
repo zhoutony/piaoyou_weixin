@@ -8,9 +8,18 @@ Page({
         cinemas: [],
         movie: {}
     },
+    onLoad(e) {
+        // console.log('onLoad:', e);
+        app.getUserInfo(function(userInfo){
+            console.log(userInfo)
+        });
+        this.loadData(e);
+    },
     loadData(param) {
         let that = this,
             _url = String.format("/CinemaList.aspx?movieID={0}&locationID={1}&latitude={2}&longitude={3}",param.movieID,param.locationID,param.latitude,param.longitude);
+            // _url = "/CinemaList.aspx",
+            // _param ={"movieID":"727","locationID":"110100","latitude":"39.90403","longitude":"116.407526"}
         model.post(_url, {}, (result, msg)=> {
             let {data} = result;
             if (data){
@@ -23,27 +32,7 @@ Page({
         });
         wx.showNavigationBarLoading();
     },
-    onLoad(e) {
-        // console.log('onLoad:', e);
-
-        app.getUserInfo(function(userInfo){
-            console.log(userInfo)
-            /*
-                avatarUrl:"http://wx.qlogo.cn/mmopen/vi_32/DYAIOgq83eorwiaJcRPxKMJ77lMqwpy8ib97kTOpMbVXNKy6lJLIIb6hTDR6HrrvUib45U74RwHLEtKq8u90dKcKg/0"
-                city:"Changping"
-                country:"CN"
-                gender:1
-                language:"zh_CN"
-                nickName:"袁海雄"
-                openid:"oRkEY0c2p-NfsEJA8o47oQdKSe14"
-                province:"Beijing"
-                session_key:"91VckOv82xYa7E/7nTclOw=="
-            */
-        });
-
-
-        this.loadData(e);
-    },
+    
     scheduletap(e) {
         let data = e.currentTarget.dataset;
         wx.navigateTo({ url: '../schedule/schedule?movieno=' + this.data.movie.movieno + '&cinemano=' + data.cinemano })

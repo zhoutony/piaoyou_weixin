@@ -9,51 +9,16 @@
   <view class="item-link item-flexbox-v movie-scroll">
       <scroll-view class="scroll-x" scroll-x="true">
           <view class="scoll-mid">
-              <view class="img-box curr">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+            <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
+              <view class="img-box {{movieno==item.movieno?'curr':''}}" data-movieno="{{item.movieno}}" bindtap="tapMovieItem">
+                  <image src="{{item.movie_poster_mini}}" data-index="{{index}}" />
                </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
+            </block>
           </view>
           <!--item-flexbox end-->
       </scroll-view>
       <!--scroll-view end-->
-      <text class="name">金刚：骷髅岛</text>
+      <text class="name">{{movie.name}}</text>
       
   </view>
   <!--movie-scroll end-->

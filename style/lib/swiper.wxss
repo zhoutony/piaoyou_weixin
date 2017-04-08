@@ -1,5 +1,5 @@
 .item-swiper {
-  height: 160rpx;
+  height: 190rpx;
 }
  
 .item-swiper .img-box {

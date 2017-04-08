@@ -10,12 +10,11 @@
 
   <!--item-link end-->
   <swiper class="item-swiper" indicator-active-color="#00948d" autoplay="true" indicator-dots="true" circular="true">
-    <swiper-item class="img-box">
-      <image src="" />
-    </swiper-item>
-    <swiper-item class="img-box">
-      <image src="" />
-    </swiper-item>
+    <block wx:for-items="{{advertisements}}" wx:key="{{index}}">
+      <swiper-item class="img-box" data-movieno="{{item.movieID}}" bindtap="scheduletap">
+        <image src="{{item.imageUrl}}" />
+      </swiper-item>
+    </block>
   </swiper>
 
   <!--item-swiper end-->
@@ -43,7 +42,7 @@
               </view>
               <view class="buyticket">
                 <button type="default" size="mini" plain="true" hover-class="none">购票</button>
-                <text class="price">{{item.minPrice}}</text>
+                <text class="price">{{item.minPrice / 100}}</text>
               </view>
             </view>
 

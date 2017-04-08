@@ -21,6 +21,15 @@
   </view>
 
   <!--seat-screen end-->
+  <view class="seat-tips item-flexbox-h-c">
+      <view class="select-seat"></view>
+      <text>选择</text>
+      <view class="lock-seat"></view>
+      <text>已选</text>
+      <view class="seat"></view>
+      <text>未选</text>
+  </view>
+  <!--seat-tips end-->
   <scroll-view scroll-y="true" class="seat-scroll scroll-y">
     <view class="temp-ticket">
 

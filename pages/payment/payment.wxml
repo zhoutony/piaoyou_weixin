@@ -1,5 +1,3 @@
-<!--index.wxml-->
-<!--<include src="/pages/ctrl/mine.wxml" />-->
 <!--wrap Begin-->
 <view class="wrap item-flexbox-v">
    <scroll-view class="item-flex scroll-y" scroll-y="true">
@@ -84,16 +82,18 @@
    </view>
    <!--order list end-->
    <view class="order-type">
+        <icon type="cancel" size="10" color="#333"/>
         <text>不支持退款</text>
+        <icon type="cancel" size="10" color="#333"/>
         <text>不支持更换场次</text>
    </view>
    <!--order-type end-->
    <view class="order-button">
       <button type="primary">微信支付</button>
-      <button type="primary">联通话费支付</button>
    </view>
    <!--order-button end-->
    <view class="order-time">
+    <icon type="waiting" size="10" color="#00968e"/>
     <text class="label">支付剩余时间</text>
     <text class="time">13分45秒</text>
    </view>
