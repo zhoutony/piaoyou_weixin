@@ -1,11 +1,11 @@
 <!--wrap Begin-->
-<view class="wrap item-flexbox-v">
+<view class="wrap item-flexbox-v {{ishide == 1 ? 'm-hide' : ''}}">
    <scroll-view class="item-flex scroll-y" scroll-y="true">
    <view class="item-link movie-title">
         <view class ="con-block">
-            <text class="name">金刚：骷髅岛</text>
-            <text class="cinema-name">北京万达影城</text>
-            <text class="type">3D,中国巨幕3D ｜ 5号厅 ｜ 2017-03-22 11:30</text>
+            <text class="name">{{movie.movieName}}</text>
+            <text class="cinema-name">{{movie.cinemaName}}</text>
+            <text class="type">{{movie.version}} ｜ {{movie.hallName}} ｜ {{movie.ticketStartTime}}</text>
         </view>
         <!--con-block end-->
         <view class="bar-block">
@@ -16,9 +16,11 @@
    <!--item-link end-->
    <view class="oderlist ">
       <view class="item-order">
+        <block wx:for-items="{{seatNames}}" wx:key="{{index}}">
           <view class="con-block">
-              <text class="tag-seats">11排12座</text>
+              <text class="tag-seats">{{item}}</text>
           </view>
+        </block>
           <!--con-block end-->
           <view class="bar-block">
               <text class="price">￥90.01</text>
@@ -43,7 +45,7 @@
           </view>
           <!--con-block end-->
           <view class="bar-block">
-              <text class="select">1张 点击使用</text>
+              <text class="select">无可用</text>
           </view>
           <!--bar-block end-->
       </view>
@@ -62,7 +64,7 @@
       <view class="item-order">
           <view class="con-block">
               <text class="label">手机号</text>
-              <text class="tel">13811984938</text>
+              <text class="tel">{{mobile}}</text>
           </view>
           <!--con-block end-->
           
@@ -88,7 +90,7 @@
         <text>不支持更换场次</text>
    </view>
    <!--order-type end-->
-   <view class="order-button">
+   <view class="order-button" bindtap="tapPayment">
       <button type="primary">微信支付</button>
    </view>
    <!--order-button end-->

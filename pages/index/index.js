@@ -9,7 +9,8 @@ Page({
             nameCN: '北京市',
             locationID: 110100
         },
-        advertisements: {}
+        advertisements: {},
+        ishide: 1
     },
     loadData(e) {
         var that = this;
@@ -21,7 +22,8 @@ Page({
             if (data)
                 that.setData({
                     // cinema: data.cinema_info.data,
-                    movies: data
+                    movies: data,
+                    ishide: 0
                 })
             that.getLocationMethod();
             wx.hideNavigationBarLoading();

@@ -1,0 +1,16 @@
+<template name="dialog">
+    <view class="pop-wrapper {{dialog.isHide ? 'm-hide' : '' }}">
+        <view class="mask"></view>
+        <view class="pop-btn-box pop-input">
+            <view class="mod-bd" style="padding-top: 50rpx;font-size:30rpx;color:#333;">
+            <!--<input id="txtPhone" maxlength="11" type="tel" name="" value="13651042422" placeholder="填写手机号" class="tel"/>
+            <view id="errMsg" class="infoTip">手机号格式不正确，请重新输入</view>-->
+            <view class="">{{dialog.content}}</view>
+            </view>
+            <view class="btns fixed">
+            <view class="cancel" bingtap="cancel">取消</view>
+            <view class="confirm" bingtap="confirm">确认</view>
+            </view>
+        </view>
+    </view>
+</template>

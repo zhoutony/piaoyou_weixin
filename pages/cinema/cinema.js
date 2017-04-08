@@ -6,7 +6,8 @@ let app = getApp();
 Page({
     data: {
         cinemas: [],
-        movie: {}
+        movie: {},
+        ishide: 1
     },
     onLoad(e) {
         // console.log('onLoad:', e);
@@ -25,7 +26,8 @@ Page({
             if (data){
                 that.setData({
                     movie: data.movie,
-                    cinemas: data.cinemas
+                    cinemas: data.cinemas,
+                    ishide: 0
                 })
             }
             wx.hideNavigationBarLoading();

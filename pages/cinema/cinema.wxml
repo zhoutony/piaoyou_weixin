@@ -1,4 +1,4 @@
-<view class="wrap item-flexbox-v">
+<view class="wrap item-flexbox-v {{ishide == 1 ? 'm-hide' : ''}}">
    <view class="movielist item-link">
         <view class="bar-block">
             <view class="img-box">

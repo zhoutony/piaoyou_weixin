@@ -7,7 +7,8 @@ Page({
         schedules: [],
         movieno: 0,
         cinemano: 0,
-        movie: {}
+        movie: {},
+        ishide: 1
     },
     onLoad: function(e){
         this.i = 0;
@@ -31,7 +32,8 @@ Page({
                     schedules: data.sche,
                     movie_list: data.movies,
                     movie: movie,
-                    cinemano: e.cinemano
+                    cinemano: e.cinemano,
+                    ishide: 0
                 })
                 wx.hideNavigationBarLoading();
             });
@@ -55,10 +57,6 @@ Page({
             this.setData(data);
             this.loadData({ movieno: data.movie.movieno, cinemano: this.data.cinemano });
         }
-        // this.animation.scale(1, 1).step()
-        // this.setData({
-        //     animationData1: this.animation.export()
-        // })
     },
     selectseattap: function (e) {
         let data = e.currentTarget.dataset;

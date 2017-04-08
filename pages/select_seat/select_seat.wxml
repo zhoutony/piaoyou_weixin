@@ -1,4 +1,4 @@
-
+<import src="../template/load.wxml" />
 <!--wrap Begin-->
 <view class="wrap item-flexbox-v {{ishide == 1 ? 'm-hide' : ''}}">
   <view class="item-link movie-title">
@@ -30,7 +30,7 @@
       <text>未选</text>
   </view>
   <!--seat-tips end-->
-  <scroll-view scroll-y="true" class="seat-scroll scroll-y">
+   <view class="seat-scroll item-flex">
     <view class="temp-ticket">
 
       <!--number 行号 Begin
@@ -52,15 +52,16 @@
       </view>-->
 
       <!--number 行号 end-->
-      <scroll-view scroll-x="true" class="scroll-x seats">
+      <scroll-view scroll-x="true" scroll-y="true"  class="scroll-x scroll-y seats">
         <view class="seat-table">
           <block wx:for="{{seats}}" wx:key="index">
             <view class="seat-tr">
               <block wx:for="{{item}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
-                <view class="seat-td" data-seatid="{{item.seatID}}" data-seatname="{{seat.seatName}}" data-status="{{seat.status}}" bindtap="tapSeat">
-                    <view class="{{_item.status == 0 ? 'lock-seat' : (_item.status == 1 ? 'seat' : 'empty-seat')}}"></view>
-                    <view class="seat-txt">
-                            <text>{{item.seatName}}</text>
+                <view class="seat-td" data-seatid="{{_item.seatID}}" data-seatname="{{_item.seatName}}" data-status="{{_item.status}}" data-xcoord="{{_item.xCoord}}" data-ycoord="{{_item.yCoord}}" bindtap="tapSeat">
+                    <view class="{{_item.classStatus == 0 ? 'lock-seat' : _item.classStatus == 1 ? 'seat' : _item.classStatus == 3 ? 'select-seat' : 'empty-seat'}}"></view>
+                    <view class="seat-txt {{_item.classStatus == 3 ? '' : 'm-hide'}}">
+                            <text>{{_item.xCoord}}排</text>
+                            <text>{{_item.yCoord}}座</text>
                     </view>
                 </view>
               <!--seat-td end-->
@@ -74,20 +75,20 @@
 
       <!--scroll-X end-->
     </view>
-  </scroll-view>
+  </view>
 
   <!--scroll-y end-->
 
   <!--scroll-view end-->
   <view class="seat-info">
     <view class="item-flexbox-v-c seat-tips">
-      <text class="seat-txt" style="display:none1;">请选择座位,最多可选4个座位</text>
+      <text class="seat-txt item-flex" style="display:none1;">请选择座位,最多可选4个座位</text>
+      <text class="price">¥188</text>
     </view>
-
     <!--seat-tips end-->
     <view class="item-flexbox-v-c seat-submit">
       <view class="item-content item-flex">
-        <input type="number" class="seat-phone" placeholder="请输入您的购票手机号" />
+        <input type="number" maxlength="11" class="seat-phone" placeholder="请输入您的购票手机号" value="{{mobile}}" />
       </view>
 
       <!--item-content end-->
@@ -101,7 +102,7 @@
     </view>
   </view>
 </view>
-
+<template is="loading" data="{{_hiddenLoading: hiddenLoading, title:'锁座中...'}}"/>
 <!--wrap end-->
 
  

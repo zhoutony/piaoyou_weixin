@@ -168,8 +168,13 @@
   text-align: center;
   position: ralative;
   z-index: 0;
+  padding-bottom:0;
 }
-
+.seat-info .seat-tips .price{
+  font-size:34rpx;
+  color:#4db3ae;
+  padding-right:30rpx;
+}
 .item-seats {
   width: 100%;
 }
@@ -178,6 +183,7 @@
   padding: 0 10rpx;
   color: #666;
   display: block;
+  text-align:left;
 }
 
 .seat-info .seat-tips .item-label {

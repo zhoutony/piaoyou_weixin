@@ -24,3 +24,6 @@
 .movielist .other-info text {
   padding-top: 10rpx;
 }
+.movielist .other-info .actor{
+  line-height:1.5;
+}

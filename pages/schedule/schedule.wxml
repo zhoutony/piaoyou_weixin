@@ -26,7 +26,7 @@
           <text>温馨提示：开场前15分钟停止在线售票</text>
   </view>
   <!--tag-cinemaend-->
-  <view class="item-link time-scroll" style="height: 48px;">
+  <view class="item-link time-scroll" style="height: 88rpx;">
         <scroll-view class="scroll-x" scroll-x="true">
            <view class="scoll-mid">
               <block wx:for="{{schedules}}" wx:key="index">
@@ -47,7 +47,7 @@
           <block wx:for="{{item.shows}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
             <view class="item-link item-flexbox-v-c" data-scheduleno="{{_item.schedule_id}}" bindtap="selectseattap">
                 <view class="type">
-
+                    <image src="http://js.moviefan.com.cn/piaoyou_fe/images/icosun.png" />
                 </view>
                 <!--type end-->
                 <view class="time">
