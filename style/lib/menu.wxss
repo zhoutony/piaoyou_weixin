@@ -85,6 +85,11 @@ display:-webkit-flex;
 .tool .item-box .icon{
     width:100rpx;
     height:150rpx;
+    margin:0 auto;
+}
+.tool .item-box .icon image{
+    width:100%;
+    height:100%;
 }
 .tool .item-box  text{
     font-size:24rpx;

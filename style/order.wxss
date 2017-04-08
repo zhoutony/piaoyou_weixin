@@ -65,7 +65,7 @@
   text-align: center;
 }
 .order-type text{
-    margin:0 20rpx;
+    margin:0 20rpx 0 0;
 }
 
 .order-type text {
@@ -97,4 +97,13 @@
 .order-time .time{
     color: #00968e;
     padding-left:20rpx;
+}
+.order-time icon,
+.order-type icon{
+  display:inline-block;
+  vertical-align: middle;
+  margin-right:10rpx;
+}
+.order-type icon{
+  margin:4rpx;
 }

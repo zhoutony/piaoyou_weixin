@@ -30,10 +30,10 @@ text{
     height: 3rem;
     border-radius: 100%;
     border: 2px solid #fff;
-}.
+}
 .m-hide {
-  display: none;
+  display: none!important;
 }
 .m-show {
-  display: block;
+  display: block!important;
 }

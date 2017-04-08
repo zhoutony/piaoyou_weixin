@@ -8,7 +8,9 @@ Page({
         city: {
             nameCN: '北京市',
             locationID: 110100
-        }
+        },
+        advertisements: {},
+        ishide: 1
     },
     loadData(e) {
         var that = this;
@@ -20,7 +22,8 @@ Page({
             if (data)
                 that.setData({
                     // cinema: data.cinema_info.data,
-                    movies: data
+                    movies: data,
+                    ishide: 0
                 })
             that.getLocationMethod();
             wx.hideNavigationBarLoading();
@@ -41,9 +44,7 @@ Page({
         app.getUserInfo(function(userInfo){
             console.log(userInfo)
         });
-
-        
-        
+        this.gitAdvertisements();
     },
     onShow: function(e){
         try {
@@ -58,6 +59,19 @@ Page({
           // Do something when catch error
         }
         this.loadData(e);
+    },
+    gitAdvertisements: function(){
+        try {
+            let that = this;
+            model.post("/queryAdvertisements.aspx?type=4", {}, (result, msg) => {
+                let advertisements = result.data.advertisements;
+                that.setData({
+                    advertisements: advertisements
+                })
+            });
+        } catch (e) {
+            console.log(e)
+        }
     },
     getLocationMethod: function(){
         var that = this;

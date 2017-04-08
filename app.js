@@ -8,6 +8,7 @@ App({
   },
   getUserInfo: function (cb) {
     var that = this;
+    // wx.clearStorage()
     try {
       var userInfo = wx.getStorageSync('userInfo')
       if (userInfo) {
@@ -20,8 +21,8 @@ App({
             wx.request({
               url: 'https://api.weixin.qq.com/sns/jscode2session', //仅为示例，并非真实的接口地址
               data: {
-                appid: 'wx5eeee4ffdd269019',
-                secret: '325460960bee92e747424f24203b3c2a',
+                appid: 'wxfed82c22a9f920e3',
+                secret: '0ed6153be63b696365c12ba8dbf80282',
                 js_code: res.code,
                 grant_type: 'authorization_code'
               },

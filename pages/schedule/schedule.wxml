@@ -9,51 +9,16 @@
   <view class="item-link item-flexbox-v movie-scroll">
       <scroll-view class="scroll-x" scroll-x="true">
           <view class="scoll-mid">
-              <view class="img-box curr">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
+            <block wx:for-items="{{movie_list}}" wx:key="{{index}}">
+              <view class="img-box {{movieno==item.movieno?'curr':''}}" data-movieno="{{item.movieno}}" bindtap="tapMovieItem">
+                  <image src="{{item.movie_poster_mini}}" data-index="{{index}}" />
                </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
-               <view class="img-box">
-                  <image src="https://image.moviefan.com.cn/Movie/2017-3-13/636249954126503301.jpg" />
-               </view>
-               <!--img-box end-->
+            </block>
           </view>
           <!--item-flexbox end-->
       </scroll-view>
       <!--scroll-view end-->
-      <text class="name">金刚：骷髅岛</text>
+      <text class="name">{{movie.name}}</text>
       
   </view>
   <!--movie-scroll end-->
@@ -61,7 +26,7 @@
           <text>温馨提示：开场前15分钟停止在线售票</text>
   </view>
   <!--tag-cinemaend-->
-  <view class="item-link time-scroll" style="height: 48px;">
+  <view class="item-link time-scroll" style="height: 88rpx;">
         <scroll-view class="scroll-x" scroll-x="true">
            <view class="scoll-mid">
               <block wx:for="{{schedules}}" wx:key="index">
@@ -82,7 +47,7 @@
           <block wx:for="{{item.shows}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
             <view class="item-link item-flexbox-v-c" data-scheduleno="{{_item.schedule_id}}" bindtap="selectseattap">
                 <view class="type">
-
+                    <image src="http://js.moviefan.com.cn/piaoyou_fe/images/icosun.png" />
                 </view>
                 <!--type end-->
                 <view class="time">

@@ -1,86 +1,114 @@
-.item-cinema .name,
-.item-cinema .address{
-    display:block;
+.item-cinema .name, .item-cinema .address {
+  display: block;
 }
-.item-cinema .name{
-    font-size:34rpx;
-    font-weight:bold;
-    color:#333;
+
+.item-cinema .name {
+  font-size: 34rpx;
+  font-weight: bold;
+  color: #333;
 }
-.item-cinema .address{
-    color:#898989;
-    padding:20rpx 0;
+
+.item-cinema .address {
+  color: #898989;
+  padding: 20rpx 0;
 }
-.item-cinema .price{
-    font-size:30rpx;
-    color:#4DB3AE;
+
+.item-cinema .price {
+  font-size: 30rpx;
+  color: #4db3ae;
 }
 
 /**座位图 Begin**/
+
 .seat-scroll {
-	background: #e9e9e9;
-	-webkit-flex: 1;
-	flex: 1;
-	padding: 0;
+  background: #f7f7f7;
+  -webkit-flex: 1;
+  flex: 1;
+  padding: 0;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
-.temp-ticket,
-.temp-ticket .seat-tr,
-.temp-ticket .seat-txt {
-	display: -webkit-flex;
-	display: flex;
+
+.seat-scroll .scroll-y {
+  height: 700rpx;
 }
-.temp-ticket { padding: 20rpx 15rpx 20rpx 20rpx; }
+
+.temp-ticket, .temp-ticket .seat-tr, .temp-ticket .seat-txt {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.temp-ticket {
+  padding: 20rpx 15rpx 20rpx 20rpx;
+  overflow:hidden;
+}
+
 .temp-ticket .number {
-	border-radius: 60rpx;
-	overflow: hidden;
-	width: 60rpx;
+  -webkit-border-radius: 60rpx;
+  border-radius: 60rpx;
+  overflow: hidden;
+  width: 60rpx;
 }
+
 .temp-ticket .number text {
-	display: block;
-	background: rgba(0, 0, 0, 0.6);
-	color: white;
-	font-size: 24rpx;
-	text-align: center;
-	width: 60rpx;
-	height: 72rpx;
-	line-height: 40px;
+  display: block;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  font-size: 24rpx;
+  text-align: center;
+  width: 60rpx;
+  height: 72rpx;
+  line-height: 40px;
 }
+
 .temp-ticket .seats {
-	-webkit-flex: 1;
-	flex: 1;
-	overflow: hidden;
+  -webkit-flex: 1;
+  flex: 1;
 }
+
 .temp-ticket .seat-table {
-	white-space: nowrap;
+  white-space: nowrap;
+  padding-bottom: 5rpx;
 }
+
 .temp-ticket .seat-tr {
-	white-space: nowrap;
-	-webkit-flex-wrap: nowrap;
-	flex-wrap: nowrap;
+  white-space: nowrap;
+  -webkit-flex-wrap: nowrap;
+  flex-wrap: nowrap;
 }
+
 .temp-ticket .seat-td {
-	margin: 12rpx 2rpx 0 10rpx;
-	position: relative;
+  margin: 12rpx 2rpx 0 10rpx;
+  position: relative;
+  -webkit-flex-shrink: 0;
+  flex-shrink: 0;
 }
+
 .temp-ticket .seat-txt {
-	position: absolute;
-	top: 5rpx;
-	right: 0;
-	bottom: 0;
-	left: 0;
-	-webkit-flex-direction: column;
-	flex-direction: column;
-	-webkit-justify-content: center;
-	justify-content: center;
-	-webkit-align-items: center;
-	align-items: center;
+  position: absolute;
+  top: 5rpx;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
+
 .temp-ticket .seat-txt text {
-	display: block;
-	color: #888;
-	font-size: 18rpx;
-	line-height: 1.3;
+  display: block;
+  color: #fff;
+  font-size: 18rpx;
+  line-height: 1.3;
 }
+
 /**座位
   seat-txt            座位文字 
   seat                普通座位
@@ -91,51 +119,73 @@
   love-select-seat    情侣座位选中
   love-lock-seat      情侣座位不可选
 **/
-.seat,
-.select-seat,
-.lock-seat,
-.empty-seat,
-.love-seat,
-.love-select-seat,
-.love-lock-seat {
-	display: block;
-	width: 60rpx;
-	height: 60rpx;
-}
-.seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
-	background-size: 100% auto;
-}
-.select-seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png)no-repeat 0 0;
-	background-size: 100% auto;
-}
-.lock-seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
-	background-size: 100% auto;
-}
-.love-seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
-	background-size: 100% auto;
-}
-.love-select-seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
-	background-size: 100% auto;
-}
-.love-lock-seat {
-	background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
-	background-size: 100% auto;
-}
-.love-seat,
-.love-select-seat,
-.love-lock-seat { width: 132rpx; }
 
-.zoomin .number,
-.zoomin .seat-table {
-	transform: scale(0.5);
-	transform-origin: 0 0;
+.seat, .select-seat, .lock-seat, .empty-seat, .love-seat, .love-select-seat,
+.love-lock-seat {
+  display: block;
+  width: 60rpx;
+  height: 60rpx;
 }
-.zoomin .numbar,
-.zoomin .numbar text { width: 30rpx; }
-.zoomin .seats { margin-left: -20rpx; }
+
+.seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.select-seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set01.png)no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.lock-seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set02.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.love-seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.love-select-seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.love-lock-seat {
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background-size: 100% auto;
+}
+
+.love-seat, .love-select-seat, .love-lock-seat {
+  width: 132rpx;
+}
+
+.zoomin .number, .zoomin .seat-table {
+  transform: scale(0.5);
+  transform-origin: 0 0;
+}
+
+.zoomin .numbar, .zoomin .numbar text {
+  width: 30rpx;
+}
+
+.zoomin .seats {
+  margin-left: -20rpx;
+}
+
 /**座位图 End**/
+
+.seat-tips {
+  padding-bottom: 20rpx;
+}
+
+.seat-tips view {
+  margin: 0 10rpx 0rpx 30rpx;
+  width: 30rpx;
+  height: 30rpx;
+}
+
+.seat-tips text {
+  display: block;
+}
