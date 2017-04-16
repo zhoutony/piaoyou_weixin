@@ -9,7 +9,8 @@
     "pages/select_seat/select_seat",
     "pages/movie/movie",
     "pages/cinema/cinema",
-    "pages/city/city"
+    "pages/city/city",
+    "pages/orderdraw/orderdraw"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -9,7 +9,7 @@
         </view>
         <!--con-block end-->
         <view class="bar-block">
-          <button type="primary" size="mini">重新选座</button>
+          <button type="primary" bindtap="reselect" size="mini">重新选座</button>
         </view>
         <!--bar-block end-->
    </view>
@@ -23,12 +23,12 @@
         </block>
           <!--con-block end-->
           <view class="bar-block">
-              <text class="price">￥90.01</text>
+              <text class="price">￥{{price}}</text>
           </view>
           <!--bar-block end-->
       </view>
       <!--item-order end-->
-      <view class="item-order">
+      <view class="item-order m-hide">
           <view class="con-block">
               <text class="label">红包</text>
           </view>
@@ -39,7 +39,7 @@
           <!--bar-block end-->
       </view>
       <!--item-order end-->
-      <view class="item-order">
+      <view class="item-order m-hide">
           <view class="con-block">
               <text class="label">票有卡</text>
           </view>
@@ -50,7 +50,7 @@
           <!--bar-block end-->
       </view>
       <!--item-order end-->
-      <view class="item-order">
+      <view class="item-order m-hide">
           <view class="con-block">
               <text class="label">兑换码</text>
           </view>
@@ -76,7 +76,7 @@
           </view>
           <!--con-block end-->
           <view class="bar-block">
-              <text class="select-price">￥90.01</text>
+              <text class="select-price">￥{{price}}</text>
           </view>
           <!--bar-block end-->
       </view>

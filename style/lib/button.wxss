@@ -50,7 +50,9 @@ button.btn-link {
   color: #00968e;
   padding: 0;
 }
-
+button.btn-link-hover{
+  color:#666;
+}
 button.btn-link:after {
   display: none;
 }

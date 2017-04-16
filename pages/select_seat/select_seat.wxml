@@ -1,4 +1,5 @@
 <import src="../template/load.wxml" />
+<template is="loading" data="{{_hiddenLoading: hiddenLoading, title:loadTitle}}"/>
 <!--wrap Begin-->
 <view class="wrap item-flexbox-v {{ishide == 1 ? 'm-hide' : ''}}">
   <view class="item-link movie-title">
@@ -83,7 +84,7 @@
   <view class="seat-info">
     <view class="item-flexbox-v-c seat-tips">
       <text class="seat-txt item-flex" style="display:none1;">请选择座位,最多可选4个座位</text>
-      <text class="price">¥188</text>
+      <text wx:if="{{price > 0}}" class="price">¥{{price}}</text>
     </view>
     <!--seat-tips end-->
     <view class="item-flexbox-v-c seat-submit">
@@ -95,14 +96,14 @@
       <view class="item-tool">
 
         <!--按钮变灰 not-ticket-->
-        <text class="item-label item-ticket "  bindtap="tapOrder">选好了</text>
+        <text class="item-label item-ticket {{selectSeats.length > 0 ? '': 'not-ticket'}}"  bindtap="tapOrder">选好了</text>
       </view>
 
       <!--item-tool end-->
     </view>
   </view>
 </view>
-<template is="loading" data="{{_hiddenLoading: hiddenLoading, title:'锁座中...'}}"/>
+
 <!--wrap end-->
 
  

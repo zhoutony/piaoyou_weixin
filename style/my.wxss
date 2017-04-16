@@ -1,16 +1,21 @@
 .my-header{
     background:#ddd;
-    height:300rpx;
+    height:200rpx;
 }
 .my-header .img-box{
     width:120rpx;
     height:120rpx;
     -webkit-border-radius:1000rpx;
     border-radius:1000rpx;
+    background:white;
+}
+.my-header .img-box image{
+    width:100%;
+    height:100%;
 }
 .my-header .name{
     color:#00968e;
-    padding:10rpx 0;
+    padding:20rpx 0 0;
 }
 .my-header .other{
     text-align:center;
@@ -27,4 +32,22 @@
     display:block;
     font-size:24rpx;
     color:#00968e;
+}
+
+
+.order-empty{
+    text-align:center;
+    padding:140rpx 0 0;
+}
+.my-vers{
+    padding:0 30rpx;
+}
+.my-movie{
+    padding-top:10rpx;
+    line-height:1;
+}
+.my-movie text{
+    display:inline-block;
+    vertical-align: middle;
+    padding-right:20rpx;
 }

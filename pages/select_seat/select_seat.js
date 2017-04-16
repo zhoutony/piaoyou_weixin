@@ -7,17 +7,23 @@ Page({
       seats: [],
       ishide: 1,
       mobile: '13567549087',
-      hiddenLoading: true
+      hiddenLoading: true,
+      loadTitle: '加载中...',
+      price: 0,
+      selectSeats: []
     },
     onLoad: function(e){
+        this.scheduleno = e.scheduleno
+    },
+    onShow: function(){
         this.i = 0;
         this.selectSeats = {
             seatIDs: [],
             seatNames: []
         };
-        this.scheduleno = e.scheduleno;
+        
         let that = this,
-            _url = String.format("/ShowSeats.aspx?schedule_id={0}",e.scheduleno);
+            _url = String.format("/ShowSeats.aspx?schedule_id={0}",this.scheduleno);
         model.post(_url, {}, function (result, msg) {
             let data = result.data,
                 seats = that.setSeats(data.seats),
@@ -34,15 +40,17 @@ Page({
             that.setData({
                 seats: seats,
                 movie: movie,
-                ishide: 0
+                ishide: 0,
+                hiddenLoading: true
             })
             wx.setStorage({key: "movie",data: movie});
             wx.hideNavigationBarLoading();
         });
         wx.showNavigationBarLoading();
-    },
-    onShow: function(){
-        
+        this.setData({
+            hiddenLoading: false,
+            loadTitle: '加载中...'
+        })
     },
     tapSeat: function (e) {
         let that = this,
@@ -55,13 +63,25 @@ Page({
                 seatName = data.seatname,
                 seats = this.data.seats;
              _.map(seats[xCoord], function(_seat, idx){
-                if(_seat.yCoord == yCoord){
-                    _seat.classStatus = 3;
-                    that.selectSeats.seatIDs.push(seatid);
-                    that.selectSeats.seatNames.push(seatName);
-                }
+                 if(_seat.yCoord == yCoord){
+                    if(_seat.classStatus == 3){
+                        _seat.classStatus = 1;
+                        let _index;
+                        _.find(that.selectSeats.seatIDs, function(item, index){
+                            _index = index;
+                            return item == seatid;
+                        })
+                        that.selectSeats.seatIDs.splice(_index,1);
+                        that.selectSeats.seatNames.splice(_index,1);
+                    }else{
+                        _seat.classStatus = 3;
+                        that.selectSeats.seatIDs.push(seatid);
+                        that.selectSeats.seatNames.push(seatName);
+                    }
+                 }
              });
-            this.setData({seats: seats})
+             let price = parseInt(that.data.movie.price) * that.selectSeats.seatIDs.length / 100
+            this.setData({seats: seats, price: price, selectSeats: that.selectSeats.seatNames})
         }
         // wx.navigateTo({ url: '../select_seat/select_seat?scheduleno=' + data.scheduleno })
     },
@@ -75,7 +95,7 @@ Page({
                 let seatIDs = that.selectSeats.seatIDs.join(','),
                     seatNames = that.selectSeats.seatNames.join(','),
                     _url = String.format("/SeatLock.aspx?schedule_id={0}&openId={1}&seatIDs={2}&seatNames={3}&mobile={4}",schedule_id,userInfo.openid,seatIDs,seatNames, that.data.mobile);
-                that.setData({hiddenLoading: false})
+                that.setData({hiddenLoading: false, loadTitle: '锁座中...'})
                 model.post(_url, {}, (result, msg) => {
                     let data = result.data;
                     if(result.ret == 0 && result.sub == 0 && data.sTempOrderID){

@@ -1,0 +1,36 @@
+<view class="wrap item-flexbox-v">
+  <view wx:if="{{orderStatus == 0}}" class="ticket-loading">
+    <icon type="waiting" size="50" color="#00968e"/>
+    <text>出票中...</text>
+  </view>
+  <view wx:else class="page-end">
+    <icon type="success" size="60" color="{{orderStatus == 30 ? '#00968e' : 'red'}}" />
+    <text class="en">Good Luck</text>
+    <text class="cn">{{orderStatus == 30 ? '购票成功' : '出票失败'}}</text>
+  </view>
+
+  <!--page-end-->
+  <view class="page-info item-flex">
+    <view class="infobg">
+      <text class="title">{{movie.movieName}}</text>
+    <text class="address">{{movie.cinemaName}}</text>
+    <text class="info">{{movie.version}} ｜ {{movie.hallName}} ｜ {{movie.ticketStartTime}}</text>
+    <view class="seatbox">
+      <block wx:for-items="{{seatNames}}" wx:key="{{index}}">
+        <text>{{item}}</text>
+      </block>
+    </view>
+
+    <!--seatbox end-->
+    </view>
+    <button class="btn-link" size="mini" type="default" bindtap="gotoMethod">{{orderStatus == 30 ? '查看订单详情' : orderStatus == 40 ? '返回首页' : ''}}</button>
+  </view>
+
+  <!--page-info end-->
+  <view class="page-footer">
+    <text class="tel">客服电话:4008-123-867</text>
+    <text>电影票友服务由北京亚视联合在线科技有限公司提供</text>
+  </view>
+
+  <!--page-footer end-->
+</view>
