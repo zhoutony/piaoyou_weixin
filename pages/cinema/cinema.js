@@ -1,13 +1,15 @@
 // pages/cinema/cinema.js
 
-
+import _ from '../../utils/underscore.modified.js';
 import model from '../../utils/model.js';
 let app = getApp();
 Page({
     data: {
         cinemas: [],
         movie: {},
-        ishide: 1
+        ishide: 1,
+        hiddenLoading: true,
+        loadTitle: '加载中...'
     },
     onLoad(e) {
         // console.log('onLoad:', e);
@@ -27,11 +29,13 @@ Page({
                 that.setData({
                     movie: data.movie,
                     cinemas: data.cinemas,
-                    ishide: 0
+                    ishide: 0,
+                    hiddenLoading: true
                 })
             }
             wx.hideNavigationBarLoading();
         });
+        this.setData({hiddenLoading: false})
         wx.showNavigationBarLoading();
     },
     
@@ -46,5 +50,24 @@ Page({
     citytap(e){
        let data = e.currentTarget.dataset;
        wx.navigateTo({ url: '../city/city' });
+    },
+    bindKeyInput(e) {
+        let value = e.detail.value,
+            cinemas = this.data.cinemas,
+            name, address;
+        _.map(cinemas, function(cinema, index){
+            name = cinema.cinemaName;
+            address = cinema.cinemaAddress;
+            if(name.indexOf(value) >= 0 || address.indexOf(value) >= 0){
+                cinema.isHide = false;
+                cinemas[index] = cinema;
+            }else{
+                cinema.isHide = true;
+                cinemas[index] = cinema;
+            }
+        })
+        // console.log(cinemas)
+        this.setData({cinemas: cinemas})
+        // cinemas = null;
     }
 });

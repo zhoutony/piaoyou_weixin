@@ -23,11 +23,13 @@ Page({
                 that.setData({
                     // cinema: data.cinema_info.data,
                     movies: data,
-                    ishide: 0
+                    ishide: 0,
+                    hiddenLoading: true
                 })
             that.getLocationMethod();
             wx.hideNavigationBarLoading();
         });
+        this.setData({hiddenLoading: false})
         wx.showNavigationBarLoading();
     },
     onLoad(e) {

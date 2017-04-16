@@ -159,30 +159,30 @@
   padding: 20rpx;
   position: relative;
 }
-
-.item-orderbox:after {
-  content: '未放映';
-  display: block;
-  background: orange;
+.item-orderbox:before,
+.item-orderbox:after{
+display: block;
+  background: #f65427;
   color: #fff;
   position: absolute;
   top: 0;
+  padding:0rpx 20rpx;
+  height:40rpx;
+  line-height:40rpx;
+}
+.item-orderbox:after {
+  content: '未放映';
   right: 0;
-  padding: 5rpx 20rpx;
   font-size: 22rpx;
 }
-
-.disabledorder {
-  background: #999;
+.item-orderbox:before{
+  content:'';
+  display:block;
+  right:80rpx;
+  -webkit-transform:skew(20deg,0deg);
+  transform:skew(20deg,0deg);
 }
 
-.disabledorder:after {
-  background: #888;
-}
-
-.disabledorder .code {
-  padding-left: 0;
-}
 
 .item-orderbox text {
   font-size: 24rpx;
@@ -195,7 +195,22 @@
   padding: 10rpx;
   width: 60%;
 }
+.disabledorder,
+.disabledorder .code {
+  background: #b8b8b8;
+}
+.disabledorder:before,
+.disabledorder:after{
+background: #888;
+}
+.disabledorder:after {
+  
+  content:'已放映';
+}
 
+.disabledorder .code {
+  padding-left: 0;
+}
 .item-orderbox .code text {
   display: block;
 }

@@ -6,7 +6,8 @@ Page({
       movie: {},
       seatNames: [],
       ishide: 1,
-      mobile: ''
+      mobile: '',
+      price: 0
     },
     onLoad: function(e){
         try {
@@ -15,6 +16,7 @@ Page({
               movie = wx.getStorageSync('movie'),
               mobile = wx.getStorageSync('mobile'),
               seatNames = wx.getStorageSync('seatNames');
+          
           app.getUserInfo(function(userInfo){
             that.userInfo = userInfo;
           })
@@ -22,7 +24,8 @@ Page({
             movie: movie,
             mobile: mobile,
             seatNames: seatNames,
-            ishide: 0
+            ishide: 0,
+            price: parseInt(movie.price) * seatNames.length / 100
           })
         } catch (e) { console.log(e) }
     },
@@ -58,5 +61,8 @@ Page({
             console.log(e)
         }
         
+    },
+    reselect: function(e){
+      wx.navigateBack();
     }
 })

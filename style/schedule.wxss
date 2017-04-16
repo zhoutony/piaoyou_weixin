@@ -33,7 +33,7 @@
     display:none;
 }
 .movie-scroll .img-box:after{
-    border:1rpx solid red;
+    border:1rpx solid #d8d8d8;
     top:0;
     right:0;
     bottom:0;
@@ -158,9 +158,7 @@
   font-size: 30rpx;
 }
 
-.seat-info .not-ticket {
-  background: #d8d8d8;
-}
+
 
 .seat-info .seat-tips {
   height: 80rpx;
@@ -197,4 +195,9 @@
 }
 .seat-info .item-ticket{
    border-top: 1px solid #4db3ae;
+}
+
+.seat-info .not-ticket {
+  background: #d8d8d8;
+  border-top-color:#d8d8d8;
 }

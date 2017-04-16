@@ -1,0 +1,84 @@
+.page-end {
+  text-align: center;
+  padding: 50rpx 0 0;
+}
+
+.page-end icon, .page-end text {
+  display: block;
+}
+
+.page-end text {
+  padding: 10rpx 0;
+}
+
+.page-end .en {
+  font-size: 48rpx;
+  color: #999;
+}
+
+.page-end .cn {
+  font-size: 34rpx;
+  color: #00968e;
+}
+
+.error .cn {
+  color: red;
+}
+
+.page-info {
+  margin: 20rpx 30rpx;
+}
+
+.page-info .infobg {
+  background: #f8f8f8;
+  padding: 50rpx 50rpx;
+}
+
+.page-info .title, .page-info .address, .page-info .info, .page-info .seatbox {
+  display: block;
+  line-height: 1.6;
+}
+
+.page-info .title {
+  font-size: 32rpx;
+}
+
+.page-info .seatbox text {
+  padding: 0 40rpx 0 0;
+}
+
+.page-info button {
+  margin: auto;
+  text-align: center;
+  display: block;
+  padding: 30rpx 0 0;
+  font-size: 30rpx;
+}
+
+.page-footer {
+  padding: 30rpx 0 50rpx;
+}
+
+.page-footer text {
+  display: block;
+  text-align: center;
+  line-height: 2;
+}
+
+.page-footer .tel {
+  color: #00968e;
+}
+
+.ticket-loading{
+  text-align:center;
+  padding:100rpx 0;
+}
+.ticket-loading icon,
+.ticket-loading text{
+  display:inline-block;
+  vertical-align: middle;
+}
+.ticket-loading text{
+  padding:0 30rpx;
+  font-size:34rpx;
+}

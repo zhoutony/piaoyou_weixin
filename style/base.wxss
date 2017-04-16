@@ -19,3 +19,4 @@
 @import "order.wxss";       /** 影院排期 **/
 @import "my.wxss";          /** 影院排期 **/
 @import "city.wxss";          /** 影院排期 **/
+@import "orderdraw.wxss";     /** 出票页 **/
