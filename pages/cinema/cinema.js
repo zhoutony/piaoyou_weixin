@@ -19,6 +19,7 @@ Page({
             console.log(userInfo)
         });
         this.loadData(e);
+        // console.log('onLoad:', app.globalData.systemInfo);
     },
     onShow(){
         try {

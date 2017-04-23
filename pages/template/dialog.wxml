@@ -14,3 +14,10 @@
         </view>
     </view>
 </template>
+
+<template name="toast">
+    <view class="new-toast">
+        <icon type="info" color="#fff" size="18"  />
+        <text>我是提示文字</text>
+    </view>
+</template>

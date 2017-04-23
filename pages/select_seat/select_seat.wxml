@@ -10,7 +10,7 @@
         </view>
         <!--con-block end-->
         <view class="bar-block">
-          <button type="primary" size="mini">换个场次</button>
+          <button type="primary" size="mini" bindtap="rechooseSche">换个场次</button>
         </view>
         <!--bar-block end-->
    </view>
@@ -34,8 +34,8 @@
    <view class="seat-scroll item-flex">
     <view class="temp-ticket">
 
-      <!--number 行号 Begin
-      <view class="number">
+      <!--number 行号 Begin-->
+      <!--<view class="number" animation="{{seatsAnimation}}">
         <text>1</text>
         <text>2</text>
         <text>3</text>
@@ -53,12 +53,24 @@
       </view>-->
 
       <!--number 行号 end-->
-      <scroll-view scroll-x="true" scroll-y="true"  class="scroll-x scroll-y seats">
-        <view class="seat-table">
+      <scroll-view 
+        scroll-x="true" 
+        scroll-y="true"
+        bindtouchstart="catchTouchStart"
+        bindtouchmove="catchTouchMove"
+        bindtouchend="catchTouchEnd"
+        scroll-left="{{scroll.left}}"
+        scroll-top="{{scroll.top}}"
+        class="scroll-x scroll-y seats">
+        <view class="seat-table" animation="{{seatsAnimation}}" >
+          <!--座位中间线 Begin-->
+          <!--<view class="line-v" style="left:600rpx;"></view>-->
+          <!--座位中间线 End-->
           <block wx:for="{{seats}}" wx:key="index">
             <view class="seat-tr">
               <block wx:for="{{item}}" wx:for-index="idx" wx:for-item="_item" wx:key="idx">
                 <view class="seat-td" data-seatid="{{_item.seatID}}" data-seatname="{{_item.seatName}}" data-status="{{_item.status}}" data-xcoord="{{_item.xCoord}}" data-ycoord="{{_item.yCoord}}" bindtap="tapSeat">
+                <view wx:if="{{_item.isLine == true}}" class="line-v" style="left:63rpx;"></view>
                     <view class="{{_item.classStatus == 0 ? 'lock-seat' : _item.classStatus == 1 ? 'seat' : _item.classStatus == 3 ? 'select-seat' : 'empty-seat'}}"></view>
                     <view class="seat-txt {{_item.classStatus == 3 ? '' : 'm-hide'}}">
                             <text>{{_item.xCoord}}排</text>
@@ -83,7 +95,7 @@
   <!--scroll-view end-->
   <view class="seat-info">
     <view class="item-flexbox-v-c seat-tips">
-      <text class="seat-txt item-flex" style="display:none1;">请选择座位,最多可选4个座位</text>
+      <text class="seat-txt item-flex" style="font-size:20rpx;">请选择座位,最多可选4个座位</text>
       <text wx:if="{{price > 0}}" class="price">¥{{price}}</text>
     </view>
     <!--seat-tips end-->

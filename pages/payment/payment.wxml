@@ -91,7 +91,7 @@
    </view>
    <!--order-type end-->
    <view class="order-button" bindtap="tapPayment">
-      <button type="primary">微信支付</button>
+      <button type="primary" disabled="{{paybtnDisabled}}">{{payContent}}</button>
    </view>
    <!--order-button end-->
    <view class="order-time">

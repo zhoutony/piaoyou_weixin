@@ -33,7 +33,7 @@ Page({
         wx.showNavigationBarLoading();
     },
     onLoad(e) {
-        // console.log('onLoad:', e);
+        
         var _e = {
             'public_signal_short': 'jydy',
             'cinema_no': '1000088'
@@ -47,6 +47,15 @@ Page({
             console.log(userInfo)
         });
         this.gitAdvertisements();
+        
+        wx.getSystemInfo({
+            success: function(res) {
+                app.globalData.systemInfo = res;
+                app.globalData.rpx = res.screenWidth / 750;
+            }
+        })
+
+
     },
     onShow: function(e){
         try {

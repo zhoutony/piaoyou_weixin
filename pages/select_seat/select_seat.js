@@ -10,10 +10,43 @@ Page({
       hiddenLoading: true,
       loadTitle: '加载中...',
       price: 0,
-      selectSeats: []
+      selectSeats: [],
+      seatsAnimation: {}
     },
     onLoad: function(e){
-        this.scheduleno = e.scheduleno
+        this.scheduleno = e.scheduleno;
+        this.systemInfo = app.globalData.systemInfo;
+        this.animation = wx.createAnimation({
+            duration: 300,
+            timingFuction: 'ease',
+            transformOrigin: '0 0',
+        })
+    },
+    ratioMethod: function(seats){
+        let that = this,
+            systemInfo = this.systemInfo;
+        if (systemInfo) {
+            const { windowHeight, windowWidth } = systemInfo;
+            const seatRowLen = seats[0].length;
+            const seatsWidth = seatRowLen * 72 * app.globalData.rpx;
+            const seatsHeight = seats.length * 72 * app.globalData.rpx;
+            const ratio = (windowWidth - 20) / seatsWidth;
+            that.setData({
+                ratio,
+            })
+            that.ratio = ratio
+            that.setData({
+                room_width: seatsWidth,
+                seatsHeight,
+            })
+            if (ratio < 1) {
+                that.animation.scale(ratio).step()
+            }
+
+            this.setData({
+                seatsAnimation: that.animation.export()
+            }) 
+        }
     },
     onShow: function(){
         this.i = 0;
@@ -37,6 +70,7 @@ Page({
                   "showtimeID": data.showtimeID,
                   "price": data.price
                 };
+            that.ratioMethod(seats)
             that.setData({
                 seats: seats,
                 movie: movie,
@@ -80,8 +114,14 @@ Page({
                     }
                  }
              });
-             let price = parseInt(that.data.movie.price) * that.selectSeats.seatIDs.length / 100
-            this.setData({seats: seats, price: price, selectSeats: that.selectSeats.seatNames})
+             let price = parseInt(that.data.movie.price) * that.selectSeats.seatIDs.length / 100;
+            this.animation.scale(1).step()
+            this.setData({
+                seats: seats, 
+                price: price, 
+                selectSeats: that.selectSeats.seatNames,
+                seatsAnimation: this.animation.export()
+            })
         }
         // wx.navigateTo({ url: '../select_seat/select_seat?scheduleno=' + data.scheduleno })
     },
@@ -121,6 +161,23 @@ Page({
             _seat.classStatus = _seat.status;
             _seats[_seat.xCoord][_seat.yCoord] = _seat;
         })
+        var _seats0_index = Math.round(_seats[0].length / 2);
+        _.map(_seats, function(_seat,index){
+            _seats[index][_seats0_index].isLine = true;
+        })
+        
         return _seats;
+    },
+    rechooseSche(e) {
+        wx.navigateBack();
+    },
+    catchTouchStart(e){
+        console.log(e)
+    },
+    catchTouchMove(e){
+        console.log(e)
+    },
+    catchTouchEnd(e){
+        console.log(e)
     }
 })
