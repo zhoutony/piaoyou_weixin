@@ -82,6 +82,7 @@ Page({
             utils.getLocationMethod(function(res){
                 console.log('城市定位：',res);
                 let citys = res[0];
+                wx.setStorage({key:"loccationCity",data:citys})
                 if(that.data.city.locationID != citys.locationID){
                     wx.showModal({
                     title: '提示',
@@ -122,6 +123,6 @@ Page({
     },
    citytap(e){
        let data = e.currentTarget.dataset;
-       wx.navigateTo({ url: '../city/city' });
+       wx.navigateTo({ url: '../city/city?channel=index' });
    }
 });

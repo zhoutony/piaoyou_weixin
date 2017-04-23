@@ -27,7 +27,7 @@
    <!--movieinfo end-->
    <view class="item-search-city item-flexbox-v-c">
    <view class="select-city" bindtap='citytap'>
-      <text>北京市</text>
+      <text>{{city.nameCN}}</text>
     </view>
     <view class="item-flex">
       <input bindinput="bindKeyInput" type="text" placeholder="找影院" />

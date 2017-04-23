@@ -1,14 +1,15 @@
 <view class="wrap item-flexbox-v">
   <view class="item-search-city item-flexbox-v-c">
     <view class="item-flex">
-      <input type="text" placeholder="找城市" />
+      <input bindinput="bindKeyInput" type="text" placeholder="找城市" />
     </view>
   </view>
   <!--item-search-city  end-->
   <scroll-view class="item-flex scroll-y" scroll-y="true">
-    <view class="item-city">
-      <view class="curr item-flexbox-v-c">
-        <text class="text">北京</text>
+    <view wx:if="{{showType == 0}}" class="searchcity_empty">暂无搜索城市</view>
+    <view wx:if="{{showType == 1}}" class="item-city">
+      <view class="curr item-flexbox-v-c" data-locationID="{{loccationCity.locationID}}" data-nameCN="{{loccationCity.nameCN}}" bindtap="bindViewTap">
+        <text class="text">{{loccationCity.nameCN}}</text>
         <text class="info">当前定位城市</text>
       </view>
 
@@ -20,21 +21,14 @@
       </view>-->
 
       <!--city-dd end-->
-      <!--<view class="city-dt">热门</view>
-      <view class="city-dd item-flexbox">
-        <view hover="true" hover-class="hover-city">北京</view>
-        <view hover="true" hover-class="hover-city">上海</view>
-        <view hover="true" hover-class="hover-city">广州</view>
-        <view hover="true" hover-class="hover-city">深圳</view>
-        <view hover="true" hover-class="hover-city">成都</view>
-        <view hover="true" hover-class="hover-city">南京</view>
-        <view hover="true" hover-class="hover-city">西安</view>
-        <view hover="true" hover-class="hover-city">武汉</view>
-        <view hover="true" hover-class="hover-city">重庆</view>
-        <view hover="true" hover-class="hover-city">大连</view>
-        <view hover="true" hover-class="hover-city">济南</view>
-        <view hover="true" hover-class="hover-city">长春</view>
-      </view>-->
+      <view wx:if="{{hotCitys.length > 0}}">
+        <view class="city-dt">热门</view>
+        <view class="city-dd item-flexbox">
+          <block wx:for="{{hotCitys}}" wx:key="index">
+            <view hover="true" hover-class="hover-city" data-locationID="{{item.locationID}}" data-nameCN="{{item.nameCN}}" bindtap="bindViewTap">{{item.nameCN}}</view>
+          </block>
+        </view>
+      </view>
 
       <!--city-dd end-->
         <block wx:for="{{citys}}" wx:key="unique" wx:for-index="idx" wx:for-item="city">
@@ -47,6 +41,13 @@
           </view>
           <!--city-dd end-->
       </block>
+    </view>
+    <view wx:if="{{showType == 2}}" class="item-city">
+      <view class="city-dd item-flexbox">
+          <block wx:for="{{searchCitys}}" wx:key="index">
+            <view hover="true" hover-class="hover-city" data-locationID="{{item.locationID}}" data-nameCN="{{item.nameCN}}" bindtap="bindViewTap">{{item.nameCN}}</view>
+          </block>
+      </view>
     </view>
     <!--item-city end-->
   </scroll-view>

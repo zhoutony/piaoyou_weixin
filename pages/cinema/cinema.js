@@ -9,14 +9,29 @@ Page({
         movie: {},
         ishide: 1,
         hiddenLoading: true,
-        loadTitle: '加载中...'
+        loadTitle: '加载中...',
+        city: {}
     },
     onLoad(e) {
         // console.log('onLoad:', e);
+        this.options = e;
         app.getUserInfo(function(userInfo){
             console.log(userInfo)
         });
         this.loadData(e);
+    },
+    onShow(){
+        try {
+          var city = wx.getStorageSync('city')
+          if (city) {
+              // Do something with return value
+              this.setData({
+                  city: city
+              })
+          }
+        } catch (e) {
+          // Do something when catch error
+        }
     },
     loadData(param) {
         let that = this,
@@ -49,7 +64,7 @@ Page({
     // },
     citytap(e){
        let data = e.currentTarget.dataset;
-       wx.navigateTo({ url: '../city/city' });
+       wx.redirectTo({ url: '../city/city?channel=cinema&movieID=' + this.options.movieID + '&locationID=' + this.options.locationID + '&latitude=' + this.options.latitude + '&longitude=' + this.options.longitude });
     },
     bindKeyInput(e) {
         let value = e.detail.value,
