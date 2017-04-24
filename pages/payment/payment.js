@@ -54,6 +54,16 @@ Page({
                     'paySign': data.paySign,
                     'success':function(res){
                       console.log('支付成功:', res)
+                      wx.removeStorage({
+                        key: 'sTempOrderID',
+                        success: function(res) {
+                          console.log(res.data)
+                        } 
+                      })
+                      
+                      wx.redirectTo({
+                        url: '../orderdraw/orderdraw?orderid=' + that.sTempOrderID
+                      })
                     },
                     'fail':function(res){
                       console.log('支付失败:', res)

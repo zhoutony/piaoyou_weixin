@@ -61,6 +61,7 @@
         bindtouchend="catchTouchEnd"
         scroll-left="{{scroll.left}}"
         scroll-top="{{scroll.top}}"
+        style="transform-origin:50% 50%;-ms-transform-origin:50% 50%;-webkit-transform-origin:50% 50%;"
         class="scroll-x scroll-y seats">
         <view class="seat-table" animation="{{seatsAnimation}}" >
           <!--座位中间线 Begin-->
@@ -101,7 +102,7 @@
     <!--seat-tips end-->
     <view class="item-flexbox-v-c seat-submit">
       <view class="item-content item-flex">
-        <input type="number" maxlength="11" class="seat-phone" placeholder="请输入您的购票手机号" value="{{mobile}}" />
+        <input type="number" maxlength="11" class="seat-phone" placeholder="请输入您的购票手机号" bindinput="bindKeyInput" value="{{mobile}}" />
       </view>
 
       <!--item-content end-->
