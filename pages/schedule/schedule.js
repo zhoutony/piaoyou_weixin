@@ -38,11 +38,13 @@ Page({
                     movie_list.splice(_index, 1);
                     movie_list.unshift(movie);
                 }
+                let shows = that.getSchedus(data.sche[0].shows);
+
                 that.setData({
                     scheduleIndex: 0,
                     movieno: e.movieno,
                     schedules: data.sche,
-                    scheduleShows: data.sche[0].shows,
+                    scheduleShows: shows,
                     movie_list: movie_list,
                     movie: movie,
                     cinemano: e.cinemano,

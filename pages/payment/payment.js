@@ -7,7 +7,9 @@ Page({
       seatNames: [],
       ishide: 1,
       mobile: '',
-      price: 0
+      price: 0,
+      paybtnDisabled: false,
+      payContent: '微信支付'
     },
     onLoad: function(e){
         try {
@@ -37,7 +39,10 @@ Page({
             data = e.currentTarget.dataset;
         try {
             let _url = String.format("/QueryWeiXinAppPay.aspx?openID={0}&orderID={1}",this.userInfo.openid,this.sTempOrderID);
-            
+            that.setData({
+              paybtnDisabled: true,
+              payContent: '正在支付...'
+            });
             model.post(_url, {}, (result, msg) => {
                 if(result.ret == 0 && result.sub == 0){
                   let data = result.data;
@@ -49,9 +54,35 @@ Page({
                     'paySign': data.paySign,
                     'success':function(res){
                       console.log('支付成功:', res)
+                      wx.removeStorage({
+                        key: 'sTempOrderID',
+                        success: function(res) {
+                          console.log(res.data)
+                        } 
+                      })
+                      
+                      wx.redirectTo({
+                        url: '../orderdraw/orderdraw?orderid=' + that.sTempOrderID
+                      })
                     },
                     'fail':function(res){
                       console.log('支付失败:', res)
+                      wx.showModal({
+                          title: '提示',
+                          content: '支付失败，请重试。',
+                          showCancel: false,
+                          success: function(res) {
+                              if (res.confirm) {
+                                  console.log('用户点击确定')
+                              } else if (res.cancel) {
+                                  console.log('用户点击取消')
+                              }
+                              that.setData({
+                                paybtnDisabled: false,
+                                payContent: '微信支付'
+                              });
+                          }
+                      })
                     }
                   })
                 }

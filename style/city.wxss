@@ -63,3 +63,7 @@
 .item-city .curr .text{
     font-size:32rpx;color:#00968e;
 }
+.searchcity_empty{
+    padding:50rpx 0;
+    text-align:center;
+}

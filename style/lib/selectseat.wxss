@@ -143,17 +143,17 @@
 }
 
 .love-seat {
-  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/img/set03.png) no-repeat 0 0;
   background-size: 100% auto;
 }
 
 .love-select-seat {
-  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/img/set03.png) no-repeat 0 0;
   background-size: 100% auto;
 }
 
 .love-lock-seat {
-  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/set03.png) no-repeat 0 0;
+  background: url(http://js.moviefan.com.cn/piaoyou_fe/images/img/set03.png) no-repeat 0 0;
   background-size: 100% auto;
 }
 
@@ -188,4 +188,20 @@
 
 .seat-tips text {
   display: block;
+}
+.seat-table {
+  position:relative;
+}
+.seat-table .line-v{  
+  display:block;
+  border:1px dashed #017973;
+  border-top:none;
+  border-left:none;
+  border-bottom:none;
+  width:2rpx;
+  position:absolute;
+  top:60rpx;
+  bottom:0;
+  height:100%;
+  z-index: 1000;
 }

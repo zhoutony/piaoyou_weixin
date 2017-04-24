@@ -1,5 +1,5 @@
 .my-header{
-    background:#ddd;
+    background:#ddd url(../../img/mybg.jpg) no-repeat 0 0;
     height:200rpx;
 }
 .my-header .img-box{

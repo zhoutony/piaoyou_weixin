@@ -33,7 +33,7 @@ Page({
         wx.showNavigationBarLoading();
     },
     onLoad(e) {
-        // console.log('onLoad:', e);
+        
         var _e = {
             'public_signal_short': 'jydy',
             'cinema_no': '1000088'
@@ -47,6 +47,15 @@ Page({
             console.log(userInfo)
         });
         this.gitAdvertisements();
+        
+        wx.getSystemInfo({
+            success: function(res) {
+                app.globalData.systemInfo = res;
+                app.globalData.rpx = res.screenWidth / 750;
+            }
+        })
+
+
     },
     onShow: function(e){
         try {
@@ -82,6 +91,7 @@ Page({
             utils.getLocationMethod(function(res){
                 console.log('城市定位：',res);
                 let citys = res[0];
+                wx.setStorage({key:"loccationCity",data:citys})
                 if(that.data.city.locationID != citys.locationID){
                     wx.showModal({
                     title: '提示',
@@ -122,6 +132,6 @@ Page({
     },
    citytap(e){
        let data = e.currentTarget.dataset;
-       wx.navigateTo({ url: '../city/city' });
+       wx.navigateTo({ url: '../city/city?channel=index' });
    }
 });
