@@ -91,7 +91,7 @@ Page({
             utils.getLocationMethod(function(res){
                 console.log('城市定位：',res);
                 let citys = res[0];
-                wx.setStorage({key:"loccationCity",data:citys})
+                wx.setStorage({key:"city",data:citys})
                 if(that.data.city.locationID != citys.locationID){
                     wx.showModal({
                     title: '提示',
@@ -118,9 +118,9 @@ Page({
     scheduletap(e) {
         let data = e.currentTarget.dataset,
             longitude = '', latitude = '';
-        wx.setStorage({key: "cityid",data: this.data.city.locationID});
+
         try {
-            let location = wx.getStorageSync('location');
+            let location = wx.getStorageSync('city')
             if (location) {
                 longitude = location.longitude;
                 latitude = location.latitude;

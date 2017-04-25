@@ -1,4 +1,6 @@
 <!--wrap Begin-->
+<import src="../template/load.wxml" />
+<template is="loading" data="{{_hiddenLoading: hiddenLoading, title:loadTitle}}"/>
 <view class="wrap item-flexbox-v {{ishide == 1 ? 'm-hide' : ''}}">
    <scroll-view class="item-flex scroll-y" scroll-y="true">
    <view class="item-link movie-title">

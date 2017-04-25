@@ -9,7 +9,8 @@ Page({
       mobile: '',
       price: 0,
       paybtnDisabled: false,
-      payContent: '微信支付'
+      payContent: '微信支付',
+      hiddenLoading: true
     },
     onLoad: function(e){
         try {
@@ -18,16 +19,19 @@ Page({
               movie = wx.getStorageSync('movie'),
               mobile = wx.getStorageSync('mobile'),
               seatNames = wx.getStorageSync('seatNames');
-          
+          that.setData({
+            hiddenLoading: false
+          })
           app.getUserInfo(function(userInfo){
             that.userInfo = userInfo;
-          })
-          this.setData({
-            movie: movie,
-            mobile: mobile,
-            seatNames: seatNames,
-            ishide: 0,
-            price: parseInt(movie.price) * seatNames.length / 100
+            that.setData({
+              movie: movie,
+              mobile: mobile,
+              seatNames: seatNames,
+              ishide: 0,
+              price: parseInt(movie.price) * seatNames.length / 100,
+              hiddenLoading: true
+            })
           })
         } catch (e) { console.log(e) }
     },
@@ -67,22 +71,26 @@ Page({
                     },
                     'fail':function(res){
                       console.log('支付失败:', res)
-                      wx.showModal({
-                          title: '提示',
-                          content: '支付失败，请重试。',
-                          showCancel: false,
-                          success: function(res) {
-                              if (res.confirm) {
-                                  console.log('用户点击确定')
-                              } else if (res.cancel) {
-                                  console.log('用户点击取消')
-                              }
-                              that.setData({
-                                paybtnDisabled: false,
-                                payContent: '微信支付'
-                              });
-                          }
-                      })
+                      that.setData({
+                        paybtnDisabled: false,
+                        payContent: '微信支付'
+                      });
+                      // wx.showModal({
+                      //     title: '提示',
+                      //     content: '支付失败，请重试。',
+                      //     showCancel: false,
+                      //     success: function(res) {
+                      //         if (res.confirm) {
+                      //             console.log('用户点击确定')
+                      //         } else if (res.cancel) {
+                      //             console.log('用户点击取消')
+                      //         }
+                      //         that.setData({
+                      //           paybtnDisabled: false,
+                      //           payContent: '微信支付'
+                      //         });
+                      //     }
+                      // })
                     }
                   })
                 }
