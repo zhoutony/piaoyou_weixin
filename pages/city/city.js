@@ -52,7 +52,7 @@ Page({
   onShow:function(){
     // 页面显示
     try {
-        var value = wx.getStorageSync('loccationCity');
+        var value = wx.getStorageSync('city');
         if (value) {
             this.setData({
               loccationCity: value
@@ -70,24 +70,18 @@ Page({
   },
   bindViewTap: function(e){
     console.log(e)
-    let city = e.target.dataset;
+    let city = e.currentTarget.dataset;
     try {
         let _city = wx.getStorageSync('city')
         if (city) {
-            if(city.locationID != city.locationid){
-              wx.setStorage({
-                  key:"city",
-                  data:{
-                    locationID:city.locationid,
-                    nameCN: city.namecn
-                  }
-              })
+            if(_city.locationID != city.locationid){
+              wx.setStorageSync('city', {locationID:city.locationid, nameCN: city.namecn, latitude: city.latitude, longitude: city.longitude});
             }
         }
         if(this.channel == 'index'){
           wx.switchTab({ url: '../index/index' });
         }else if(this.channel == 'cinema'){
-          wx.redirectTo({ url: '../cinema/cinema?movieID=' + this.options.movieID + '&locationID=' + this.options.locationID + '&latitude=' + this.options.latitude + '&longitude=' + this.options.longitude });
+          wx.redirectTo({ url: '../cinema/cinema?movieID=' + this.options.movieID + '&locationID=' + city.locationid + '&latitude=' + city.latitude + '&longitude=' + city.longitude });
         }
       } catch (e) {
         // Do something when catch error

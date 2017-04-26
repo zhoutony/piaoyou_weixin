@@ -1,5 +1,5 @@
 .my-header{
-    background:#ddd url(../../img/mybg.jpg) no-repeat 0 0;
+    background:#ddd url(http://js.moviefan.com.cn/piaoyou_fe/images/mybg.jpg) no-repeat 0 0;
     height:200rpx;
 }
 .my-header .img-box{

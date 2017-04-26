@@ -27,36 +27,51 @@ Page({
         })
     },
     
-    onShow: function(){
-        this.i = 0;
-        this.selectSeats = {
-            seatIDs: [],
-            seatNames: []
-        };
+    onShow: function(){ 
         try {
-          var mobile = wx.getStorageSync('mobile');
-          if (mobile) {
-              this.setData({
-                mobile:mobile
-              })
-              app.getUserInfo(function(userInfo){
-                var sTempOrderID = wx.getStorageSync('sTempOrderID');
-                if(sTempOrderID){
-                    var lockUrl = String.format("/SeatLock.aspx?mobile={0}&openID={1}&orderID={2}",mobile, userInfo.openid, sTempOrderID);
-                    model.post(lockUrl, {}, function (result, msg) {
-
-                    })
-                }
-              })
-          }
-              
+            this.i = 0;
+            this.selectSeats = {
+                seatIDs: [],
+                seatNames: []
+            };
+            let that = this;
+            wx.showNavigationBarLoading();
+            this.setData({
+                hiddenLoading: false,
+                loadTitle: '加载中...'
+            })
+            var mobile = wx.getStorageSync('mobile');
+            var sTempOrderID = wx.getStorageSync('sTempOrderID');
+            if (mobile && sTempOrderID) {
+                app.getUserInfo(function(userInfo){
+                  wx.removeStorage({
+                    key: 'sTempOrderID',
+                    success: function(res) {
+                      console.log(res.data)
+                    } 
+                  })
+                  var lockUrl = String.format("/SeatUnlock.aspx?mobile={0}&openID={1}&orderID={2}",mobile, userInfo.openid, sTempOrderID);
+                  model.post(lockUrl, {}, function (result, msg) {
+                    setTimeout(function(){
+                      that.initShowSeats()
+                    }, 2000)
+                      
+                  })
+                })
+            }else{
+                that.initShowSeats()
+            }
+            this.setData({
+              mobile: mobile ? mobile : '',
+              selectSeats: []
+            })
         } catch (e) {
           // Do something when catch error
         }
-        
-        
+    },
+    initShowSeats: function(){
         let that = this,
-            _url = String.format("/ShowSeats.aspx?schedule_id={0}",this.scheduleno);
+            _url = String.format("/ShowSeats.aspx?schedule_id={0}", this.scheduleno);
         model.post(_url, {}, function (result, msg) {
             let data = result.data,
                 seats = that.setSeats(data.seats),
@@ -81,21 +96,8 @@ Page({
             wx.setStorage({key: "movie",data: movie});
             wx.hideNavigationBarLoading();
         });
-        wx.showNavigationBarLoading();
-        this.setData({
-            hiddenLoading: false,
-            loadTitle: '加载中...'
-        })
     },
     tapSeat: function (e) {
-        if (this.selectSeats.seatIDs.length >= 4) {
-           wx.showModal({
-             content: '最多只能选 4 张票',
-             showCancel: false,
-           })
-           return;
-        }
-
         let that = this,
             data = e.currentTarget.dataset;
         
@@ -118,6 +120,13 @@ Page({
                         that.selectSeats.seatIDs.splice(_index,1);
                         that.selectSeats.seatNames.splice(_index,1);
                     }else{
+                        if (that.selectSeats.seatIDs.length >= 4) {
+                            wx.showModal({
+                                content: '最多只能选 4 张票',
+                                showCancel: false,
+                            })
+                            return;
+                        }
                         _seat.classStatus = 3;
                         that.selectSeats.seatIDs.push(seatid);
                         that.selectSeats.seatNames.push(seatName);
@@ -148,7 +157,9 @@ Page({
     tapOrder: function(){
         try {
             let that = this,
-                schedule_id = this.scheduleno;
+                schedule_id = this.scheduleno,
+                selectSeatsLen = this.selectSeats.seatIDs.length;
+            if(selectSeatsLen <= 0){ return; }
             var tel = that.data.mobile;
                 if(/^1[23456789]\d{9}$/.test(tel)){
                     wx.setStorage({key: "mobile",data: that.data.mobile});
@@ -260,7 +271,7 @@ Page({
           const pointend1 = this.data.touchPointEnd1
 
           // console.log('event_end', event)
-          if (event.touches.length === 0 && pointend1.type === "touchend") {
+          if (pointend1 && event.touches.length === 0 && pointend1.type === "touchend") {
 
           // console.log('point1.touches[0].clientX', point1.touches[0].clientX)
           // console.log('point1.touches[0].clientX', Math.abs(point1.touches[0].clientX - point2.touches[1].clientX))
@@ -336,18 +347,21 @@ Page({
             systemInfo = this.systemInfo;
         if (!seats) {
           that.animation.scale(scales).step()
-          setTimeout(function() {
-            console.log('%c scroll.top', 'background:#456123;', Math.ceil(scroll.top))
-            console.log('%c that.ratio', 'background:#456123;', Math.ceil(that.ratio))
-            console.log('%c top', 'background:#456123;', Math.ceil(scroll.top / that.ratio / 4))
-            console.log('%c left', 'background:#456123;', Math.ceil(scroll.left / that.ratio / 4))
-            that.setData({
-              scroll: {
-                top: Math.ceil(scroll.top / that.ratio / 4),
-                left: Math.ceil(scroll.left / that.ratio / 4),
-              }
-            })
-          }, 450)
+          if(!that.isSelectSeat){
+            that.isSelectSeat = true;
+            setTimeout(function() {
+              console.log('%c scroll.top', 'background:#456123;', Math.ceil(scroll.top))
+              console.log('%c that.ratio', 'background:#456123;', Math.ceil(that.ratio))
+              console.log('%c top', 'background:#456123;', Math.ceil(scroll.top / that.ratio / 4))
+              console.log('%c left', 'background:#456123;', Math.ceil(scroll.left / that.ratio / 4))
+              that.setData({
+                scroll: {
+                  top: Math.ceil(scroll.top / that.ratio / 4),
+                  left: Math.ceil(scroll.left / that.ratio / 4),
+                }
+              })
+            }, 450)
+          }
           return that.animation.export()
         } else {
             if (systemInfo) {
