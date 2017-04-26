@@ -16,6 +16,7 @@ Page({
         cinema: {}
     },
     onLoad: function(e){
+        this.options = e;
         this.i = 0;
         this.loadData(e);
     },
@@ -105,6 +106,12 @@ Page({
     },
     navigateToMovieData: function(){
         wx.navigateTo({url: '../movie_detail/movie_detail' })
+    },
+    onShareAppMessage: function () {
+        return {
+            title: this.data.cinema.cinemaName,
+            path: `pages/schedule/schedule?movieno=${this.options.movieno}&cinemano=${this.options.cinemano}`
+        }
     }
      
 })

@@ -7,7 +7,9 @@ Page({
         movie_list: [],
         city: {
             nameCN: '北京市',
-            locationID: 110100
+            locationID: 110100,
+            latitude: 39.92999,
+            longitude: 116.3956
         },
         advertisements: {},
         ishide: 1
@@ -91,7 +93,7 @@ Page({
             utils.getLocationMethod(function(res){
                 console.log('城市定位：',res);
                 let citys = res[0];
-                wx.setStorage({key:"city",data:citys})
+                // wx.setStorage({key:"city",data:citys})
                 if(that.data.city.locationID != citys.locationID){
                     wx.showModal({
                     title: '提示',
@@ -102,9 +104,10 @@ Page({
                                     city: citys
                                 })
                                 wx.setStorage({
-                                        key:"city",
+                                        key:"location_city",
                                         data:citys
                                 })
+                                wx.setStorage({key:"city",data:citys})
                                 that.loadData();
                             } else if (res.cancel) {
                                 console.log('用户点击取消')
@@ -119,19 +122,25 @@ Page({
         let data = e.currentTarget.dataset,
             longitude = '', latitude = '';
 
-        try {
-            let location = wx.getStorageSync('city')
-            if (location) {
-                longitude = location.longitude;
-                latitude = location.latitude;
-            }
-        } catch (e) {
-          // Do something when catch error
-        }
-        wx.navigateTo({ url: '../cinema/cinema?movieID=' + data.movieno + '&locationID=' + this.data.city.locationID + '&latitude=' + latitude + '&longitude=' + longitude })
+        // try {
+        //     let location = wx.getStorageSync('city')
+        //     if (location) {
+        //         longitude = location.longitude;
+        //         latitude = location.latitude;
+        //     }
+        // } catch (e) {
+        //   // Do something when catch error
+        // }
+        wx.navigateTo({ url: '../cinema/cinema?movieID=' + data.movieno + '&locationID=' + this.data.city.locationID + '&latitude=' + this.data.city.latitude + '&longitude=' + this.data.city.longitude })
     },
    citytap(e){
        let data = e.currentTarget.dataset;
        wx.navigateTo({ url: '../city/city?channel=index' });
-   }
+   },
+   onShareAppMessage: function () {
+        return {
+            title: '电影票友，选座快捷更优惠',
+            path: 'pages/index/index'
+        }
+    }
 });

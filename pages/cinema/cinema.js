@@ -85,5 +85,11 @@ Page({
         // console.log(cinemas)
         this.setData({cinemas: cinemas})
         // cinemas = null;
+    },
+    onShareAppMessage: function () {
+        return {
+            title: '《' + this.data.movie.name + '》购票影院',
+            path: `pages/cinema/cinema?movieID=${this.options.movieID}&locationID=${this.options.locationID}&latitude=${this.options.latitude}&longitude=${this.options.longitude}`
+        }
     }
 });
