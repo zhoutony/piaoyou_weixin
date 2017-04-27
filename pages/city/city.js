@@ -17,6 +17,7 @@ Page({
     this.options = options;
     this.channel = options.channel;
     this.loadData();
+    this.getLocationMethod();
   },
   loadData(e) {
       var that = this;
@@ -52,7 +53,7 @@ Page({
   onShow:function(){
     // 页面显示
     try {
-        var value = wx.getStorageSync('city');
+        var value = wx.getStorageSync('location_city');
         if (value) {
             this.setData({
               loccationCity: value
@@ -61,6 +62,22 @@ Page({
     } catch (e) {
         // Do something when catch error
     }
+  },
+  getLocationMethod: function(){
+      var that = this;
+      
+          utils.getLocationMethod(function(res){
+              console.log('城市定位：',res);
+              let citys = res[0];
+              that.setData({
+                  loccationCity: citys
+              })
+              wx.setStorage({
+                key:"location_city",
+                data:citys
+              })
+          })
+
   },
   onHide:function(){
     // 页面隐藏

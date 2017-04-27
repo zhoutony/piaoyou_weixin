@@ -389,5 +389,11 @@ Page({
     bindKeyInput(e) {
         let value = e.detail.value;
         this.data.mobile = value;
+    },
+    onShareAppMessage: function () {
+        return {
+            title: '《' + this.data.movie.movieName + '》选座场次',
+            path: `pages/select_seat/select_seat?scheduleno==${this.scheduleno}`
+        }
     }
 })
