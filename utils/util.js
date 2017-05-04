@@ -65,6 +65,8 @@ function getLocationMethod(callback){
         wx.setStorage({key: "location",data: param});
         model.post("/queryLocationByCoordinate.aspx?longitude="+res.longitude+"&latitude="+res.latitude, {}, (result, msg)=> {
             let {data} = result;
+            data[0].latitude = param.latitude;
+            data[0].longitude = param.longitude;
             if (data)
                 callback && callback(data);
         });
