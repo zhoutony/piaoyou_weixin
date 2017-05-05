@@ -114,6 +114,11 @@ Page({
                             }
                         }
                     })
+                }else{
+                    let _city = that.data.city;
+                    _city.latitude = citys.latitude;
+                    _city.longitude = citys.longitude;
+                    that.setData({city: _city})
                 }
             })
         }
