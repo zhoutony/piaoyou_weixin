@@ -14,7 +14,11 @@ module.exports = {
         var that = this,
             url = base + options.url,
             method = options.method ? options.method : "post";
-
+        if(url.indexOf('?') >= 0){
+            url = url + '&channel=piaoyou'
+        }else {
+            url = url + '?channel=routine'
+        }
         var param = {
             url: url,
             method: method,
@@ -43,7 +47,11 @@ module.exports = {
         var that = this,
             url = base + url,
             method = "POST";
-
+        if(url.indexOf('?') >= 0){
+            url = url + '&channel=routine'
+        }else {
+            url = url + '?channel=routine'
+        }
         var param = {
             url: url,
             method: method,
